@@ -1,0 +1,50 @@
+19:17:40.735 Running build in Washington, D.C., USA (East) – iad1
+19:17:40.736 Build machine configuration: 2 cores, 8 GB
+19:17:40.785 Cloning github.com/TRIZYAPUTRA/portfolio-achyar (Branch: main, Commit: 8f266fb)
+19:17:40.787 Skipping build cache, deployment was triggered without cache.
+19:17:41.924 Cloning completed: 1.137s
+19:17:42.440 Running "vercel build"
+19:17:42.458 Vercel CLI 59.11.7
+19:17:42.661 Installing dependencies...
+19:17:55.998 
+19:17:55.999 added 372 packages in 13s
+19:17:56.000 
+19:17:56.000 159 packages are looking for funding
+19:17:56.000   run `npm fund` for details
+19:17:56.001 npm warn allow-scripts 4 packages have install scripts not yet covered by allowScripts:
+19:17:56.001 npm warn allow-scripts   @biomejs/biome@1.9.4 (postinstall: node scripts/postinstall.js)
+19:17:56.002 npm warn allow-scripts   @parcel/watcher@2.5.1 (install: node scripts/build-from-source.js)
+19:17:56.002 npm warn allow-scripts   sharp@0.34.4 (install: node install/check.js)
+19:17:56.003 npm warn allow-scripts   sharp@0.33.5 (install: node install/check)
+19:17:56.003 npm warn allow-scripts
+19:17:56.004 npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+19:17:56.041 Detected Next.js version: 16.1.6
+19:17:56.047 Running "npm run build"
+19:17:56.158 
+19:17:56.158 > @once-ui-system/magic-portfolio@2.3.0 build
+19:17:56.158 > next build
+19:17:56.158 
+19:17:57.097 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+19:17:57.098 This information is used to shape Next.js' roadmap and prioritize features.
+19:17:57.098 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+19:17:57.098 https://nextjs.org/telemetry
+19:17:57.098 
+19:17:57.114 ▲ Next.js 16.1.6 (Turbopack)
+19:17:57.117 
+19:17:57.150   Creating an optimized production build ...
+19:18:33.926 ✓ Compiled successfully in 36.4s
+19:18:33.933   Running TypeScript ...
+19:18:40.286 Failed to compile.
+19:18:40.287 
+19:18:40.287 ./src/app/about/page.tsx:40:68
+19:18:40.287 Type error: Property 'company' does not exist on type 'never'.
+19:18:40.287 
+19:18:40.287   38 |       title: about.work.title,
+19:18:40.287   39 |       display: about.work.display,
+19:18:40.287 > 40 |       items: about.work.experiences.map((experience) => experience.company),
+19:18:40.287      |                                                                    ^
+19:18:40.287   41 |     },
+19:18:40.287   42 |     {
+19:18:40.287   43 |       title: about.studies.title,
+19:18:40.360 Next.js build worker exited with code: 1 and signal: null
+19:18:40.453 Error: Command "npm run build" exited with 1

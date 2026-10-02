@@ -1,0 +1,49 @@
+---
+title: "Implementasi RTSP sebagai Monitoring Live View dan Analisis QoS dengan Skrip Lua"
+publishedAt: "2025-09-03"
+summary: "Sistem monitoring CCTV berbasis RTSP untuk live view multi-kamera dan analisis QoS jaringan pada Desa LERAN, dengan instalasi jaringan menggunakan kabel FO yang dihubungkan melalui router serta analisis trafik menggunakan Wireshark."
+images:
+  - "/images/projects/project-01/cover-04.png"
+  - "/images/projects/project-01/cover-05.png"
+  - "/images/projects/project-01/cover-06.png"
+team:
+  - name: "Dimas Achyar Trizyaputra"
+    role: "Software Engineer, Web Developer, Data Analyst"
+    avatar: "/images/avatar.webp"
+    linkedIn: "https://www.linkedin.com/in/dimas-achyar-trizyaputra"
+---
+
+## Overview
+
+Sistem ini dikembangkan untuk memantau beberapa kamera CCTV secara real-time melalui protokol RTSP (Real Time Streaming Protocol), sehingga pengguna dapat melihat live view dari berbagai titik pengamatan dalam satu antarmuka yang terintegrasi. Dengan pendekatan ini, monitoring kondisi lingkungan dapat dilakukan lebih cepat dan efisien, terutama pada area yang membutuhkan pengawasan terus-menerus seperti desa, fasilitas umum, atau area strategis.
+
+Selain live view, sistem ini juga melakukan analisis QoS (Quality of Service) untuk mengevaluasi kualitas jaringan streaming, seperti latensi, jitter, packet loss, dan throughput. Pengukuran ini penting agar kualitas video yang ditampilkan tetap stabil dan dapat diandalkan saat digunakan dalam operasional real-time. Dalam penerapannya, jaringan menggunakan kabel Fiber Optik (FO) yang disambungkan melalui router untuk menjaga konektivitas antar perangkat tetap optimal dan stabil.
+
+## Key Features
+
+- **Live View Multi-Kamera**: Menampilkan beberapa stream kamera secara bersamaan menggunakan protokol RTSP.
+- **Monitoring Real-Time**: Memungkinkan pengawasan langsung terhadap berbagai titik kamera tanpa proses yang lambat atau terputus.
+- **Analisis QoS Jaringan**: Mengevaluasi performa jaringan agar kualitas video tetap optimal selama proses streaming.
+- **Pemetaan Jaringan FO via Router**: Menggunakan infrastruktur fiber optik yang terhubung melalui router agar distribusi sinyal lebih stabil.
+- **Analisis Trafik dengan Wireshark**: Membantu mendeteksi masalah pada paket data dan performa jaringan secara lebih detail.
+
+## Technologies Used
+
+- **RTSP**: Protokol utama untuk streaming video dari kamera ke aplikasi monitoring.
+- **Lua Script**: Digunakan untuk pengolahan otomatis dan konfigurasi logika pemantauan serta analisis trafik.
+- **Wireshark**: Alat analisis jaringan untuk memeriksa paket data, latency, packet loss, dan performa streaming.
+- **Fiber Optic (FO)**: Media transmisi utama yang digunakan untuk koneksi antar perangkat agar lebih cepat dan stabil.
+- **Router**: Digunakan untuk menghubungkan perangkat jaringan agar distribusi trafik tetap terorganisir.
+- **CCTV / IP Camera**: Sumber video yang di-streaming ke sistem monitoring.
+
+## Challenges and Learnings
+
+Tantangan utama dalam pengembangan sistem ini adalah menjaga kualitas video agar tetap stabil meskipun beberapa kamera dipantau secara bersamaan. Selain itu, analisis QoS membutuhkan pemahaman yang lebih mendalam terhadap karakteristik jaringan agar hasil evaluasi benar-benar mencerminkan kondisi aktual. Dari proses ini, dipahami bahwa infrastruktur jaringan yang baik, seperti penggunaan FO dan router yang tepat, sangat berpengaruh terhadap kualitas live view dan keandalan monitoring.
+
+## Outcome
+
+Sistem ini menjadi solusi monitoring yang lebih efektif untuk pengawasan real-time dengan kualitas streaming yang lebih terukur. Dengan kombinasi RTSP, analisis QoS, serta jaringan berbasis FO melalui router, pengelolaan keamanan dan pemantauan kondisi lingkungan menjadi lebih responsif, stabil, dan siap digunakan dalam operasional sehari-hari.
+
+## Reference
+
+[Garuda - Garba Rujukan Digital](https://garuda.kemdiktisaintek.go.id/documents/detail/5866579)
