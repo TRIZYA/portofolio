@@ -109,6 +109,26 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "CV. Galvatekindo",
+        timeframe: "Mar 2021 - May 2021",
+        role: "Konten Kreator (Magang)",
+        achievements: [
+          <>
+            Membuat dan mengembangkan konten digital untuk kebutuhan promosi dan branding perusahaan.
+          </>,
+          <>
+            Mengolah ide konten menjadi materi visual dan teks yang menarik serta sesuai dengan target audiens.
+          </>,
+          <>
+            Membantu mendukung kebutuhan media sosial perusahaan melalui pembuatan konten yang konsisten dan relevan.
+          </>,
+          <>
+            Berkolaborasi dengan tim untuk menyesuaikan desain dan konsep konten dengan tujuan pemasaran perusahaan.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "CV Rozitech Multimedia Indonesia",
         timeframe: "Aug 2025 - Oct 2025",
         role: "Teknisi Jaringan (Magang)",
