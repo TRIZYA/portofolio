@@ -161,14 +161,51 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "React",
+        title: "UI/UX Design & Prototyping",
         description: (
-          <>Membangun antarmuka pengguna yang interaktif, responsif, dan mudah digunakan dengan React.</>
+          <>Merancang antarmuka pengguna (UI) yang estetis dan berpusat pada pengguna (UX), serta membangun prototipe interaktif menggunakan Figma untuk memvalidasi alur kerja aplikasi sebelum tahap pengembangan.</>
+        ),
+        tags: [
+          { name: "Figma", icon: "figma" },
+          { name: "UI/UX", icon: "uiux" }, // atau sesuaikan dengan library icon Anda
+        ],
+        images: [],
+      },
+      {
+        title: "Java Desktop Development",
+        description: (
+          <>Mengembangkan perangkat lunak PC (desktop) lintas platform yang stabil dan tangguh menggunakan Java, dengan fokus pada arsitektur yang terstruktur dan manajemen memori yang efisien.</>
+        ),
+        tags: [
+          { name: "Java", icon: "java" },
+        ],
+        images: [],
+      },
+      {
+        title: "Kotlin & Flutter (Dart)",
+        description: (
+          <>Menguasai fondasi utama pengembangan aplikasi mobile, mencakup pemrograman native Android dengan Kotlin untuk performa perangkat yang optimal, serta pembangunan aplikasi cross-platform yang responsif menggunakan Flutter dan Dart.</>
+        ),
+        tags: [
+          { name: "Kotlin", icon: "kotlin" },
+          { name: "Dart", icon: "dart" },
+          { name: "Flutter", icon: "flutter" },
+        ],
+        images: [],
+      },
+      {
+        title: "React + Vite",
+        description: (
+          <>Membangun antarmuka pengguna yang interaktif, responsif, dan mudah digunakan dengan React dan di-bundle dengan Vite.</>
         ),
         tags: [
           {
             name: "React",
             icon: "react",
+          },
+          {
+            name: "Vite",
+            icon: "vite",
           },
         ],
         images: [],
@@ -191,19 +228,30 @@ const about: About = {
         images: [],
       },
       {
-        title: "Next.js & MongoDB",
+        title: "MySQL & MongoDB",
         description: (
-          <>Menyusun aplikasi modern berbasis Next.js dengan database MongoDB untuk kebutuhan produk dan data yang scalable.</>
+          <>Perancangan dan implementasi arsitektur database ganda menggunakan MySQL untuk data relasional yang terstruktur dengan kepatuhan ACID, serta MongoDB untuk pengelolaan data dinamis berbasis dokumen yang memiliki skalabilitas tinggi.</>
         ),
         tags: [
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "MySQL",
+            icon: "mysql",
           },
           {
             name: "MongoDB",
             icon: "mongodb",
           },
+        ],
+        images: [],
+      },
+            {
+        title: "Graphic Design & Asset Creation",
+        description: (
+          <>Membuat aset visual komersial berkualitas tinggi, mencakup desain berbasis vektor menggunakan CorelDRAW untuk kebutuhan cetak dan branding, serta manipulasi gambar digital menggunakan Adobe Photoshop.</>
+        ),
+        tags: [
+          { name: "CorelDRAW", icon: "coreldraw" },
+          { name: "Photoshop", icon: "photoshop" },
         ],
         images: [],
       },
