@@ -3,33 +3,40 @@
 import { Media, MasonryGrid, Text } from "@once-ui-system/core";
 import { achievement } from "@/resources";
 
-function normalizeDriveImageUrl(src: string) {
-  if (!src.includes("drive.google.com")) {
-    return src;
-  }
-
-  const match = src.match(/\/file\/d\/([^/?#]+)/);
-  if (match?.[1]) {
-    return `https://drive.google.com/uc?export=view&id=${match[1]}`;
-  }
-
-  return src;
-}
-
 export default function AchievementView() {
   return (
     <MasonryGrid columns={2} s={{ columns: 1 }}>
       {achievement.images.map((image, index) => {
-        const isGoogleDriveImage = image.src.includes("drive.google.com");
-        const mediaSrc = isGoogleDriveImage ? normalizeDriveImageUrl(image.src) : image.src;
+        const isGoogleDrivePreview = image.src.includes("drive.google.com");
 
         return (
           <div key={index} style={{ display: "flex", flexDirection: "column", gap: "12px", overflow: "hidden" }}>
-            {image.external && !isGoogleDriveImage ? (
-              <div style={{ position: "relative", width: "100%", height: "0", paddingBottom: image.orientation === "square" ? "133.33%" : image.orientation === "horizontal" ? "56.25%" : "133.33%", overflow: "hidden" }}>
+            {isGoogleDrivePreview ? (
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "0",
+                  paddingBottom: image.orientation === "square" ? "133.33%" : image.orientation === "horizontal" ? "56.25%" : "133.33%",
+                  overflow: "hidden",
+                  borderRadius: "8px",
+                  background: "#0f1115",
+                }}
+              >
                 <iframe
                   src={image.src}
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", borderRadius: "8px", overflow: "hidden" }}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    background: "#fff",
+                    transform: "scale(1)",
+                    zoom: 1,
+                  }}
                   title={image.alt}
                   allow="fullscreen"
                   allowFullScreen
@@ -43,7 +50,7 @@ export default function AchievementView() {
                 sizes="(max-width: 560px) 100vw, 50vw"
                 radius="m"
                 aspectRatio={image.orientation === "square" ? "3 / 4" : image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
-                src={mediaSrc}
+                src={image.src}
                 alt={image.alt}
                 style={{ overflow: "hidden" }}
               />

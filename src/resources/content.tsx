@@ -239,7 +239,7 @@ const achievement: Achievement = {
   // For Google Drive PDFs, use: https://drive.google.com/file/d/FILE_ID/preview
   // Set external: true for external URLs
   images: [
-    { src: "https://drive.google.com/uc?export=view&id=1S_MJe6Lq7R5TEAK51kY8qCarejlKDvTP", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Event Online DevOps" },
+    { src: "https://drive.google.com/file/d/1S_MJe6Lq7R5TEAK51kY8qCarejlKDvTP/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Event Online DevOps" },
     { src: "/images/achievement/img2.webp", alt: "image", orientation: "square", caption: "Sertifikat 2" },
     { src: "/images/achievement/img3.webp", alt: "image", orientation: "square", caption: "Sertifikat 3" },
     { src: "/images/achievement/img4.webp", alt: "image", orientation: "square", caption: "Sertifikat 4" },
