@@ -236,8 +236,34 @@ export interface Work extends BasePageConfig {}
  * @description Configuration for the Achievement page, including metadata, navigation label, and certificate list.
  */
 export interface Achievement extends BasePageConfig {
+  /** List of training or course certificates */
+  training?: Array<{
+    /** Image source path or external URL */
+    src: string;
+    /** Image alt text */
+    alt: string;
+    /** Image orientation (horizontal/vertical) */
+    orientation: string;
+    /** Whether this is an external URL (Google Drive, etc.) */
+    external?: boolean;
+    /** Caption text to display below the image */
+    caption?: string;
+  }>;
   /** List of achievement certificates */
-  images: Array<{
+  achievements?: Array<{
+    /** Image source path or external URL */
+    src: string;
+    /** Image alt text */
+    alt: string;
+    /** Image orientation (horizontal/vertical) */
+    orientation: string;
+    /** Whether this is an external URL (Google Drive, etc.) */
+    external?: boolean;
+    /** Caption text to display below the image */
+    caption?: string;
+  }>;
+  /** Backward compatible list of certificates */
+  images?: Array<{
     /** Image source path or external URL */
     src: string;
     /** Image alt text */
