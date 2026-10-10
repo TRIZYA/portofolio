@@ -41,16 +41,16 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+      <Row
+        fillWidth
+        gap="40"
+        vertical="center"
+        s={{ direction: "column" }}
+        style={{ alignItems: "center" }}
+      >
+        <Column flex={1} maxWidth="620" horizontal="start" align="start" gap="m">
           {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
+            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
               <Badge
                 background="brand-alpha-weak"
                 paddingX="12"
@@ -64,41 +64,90 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
+            <Heading
+              wrap="balance"
+              variant="display-strong-l"
+              style={{ textAlign: "left" }}
+            >
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
+            <Text
+              wrap="balance"
+              onBackground="neutral-weak"
+              variant="heading-default-xl"
+              style={{ textAlign: "left" }}
+            >
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
+          <RevealFx paddingTop="12" delay={0.4} horizontal="start">
+            <Row gap="12" wrap="wrap">
+              <Button
+                href="https://www.linkedin.com/in/dimas-achyar-trizyaputra/"
+                target="_blank"
+                rel="noreferrer"
+                variant="secondary"
+                size="m"
+                weight="default"
+              >
+                LinkedIn
+              </Button>
+              <Button
+                id="about"
+                data-border="rounded"
+                href={about.path}
+                variant="secondary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                <Row gap="8" vertical="center" paddingRight="4">
+                  {about.avatar.display && (
+                    <Avatar
+                      marginRight="8"
+                      style={{ marginLeft: "-0.75rem" }}
+                      src={person.avatar}
+                      size="m"
+                    />
+                  )}
+                  About - Dimas Achyar Trizyaputra
+                </Row>
+              </Button>
+            </Row>
           </RevealFx>
         </Column>
-      </Column>
+
+        <Column flex={1} horizontal="center" align="center" style={{ position: "relative" }}>
+          <div style={{ position: "relative", width: "100%", maxWidth: "420px", height: "540px" }}>
+            <img
+              src="/images/home.png"
+              alt={person.name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "28px",
+                display: "block",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                bottom: 0,
+                height: "34%",
+                borderRadius: "0 0 28px 28px",
+                background:
+                  "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,10,10,0.22) 30%, rgba(10,10,10,0.62) 100%)",
+              }}
+            />
+          </div>
+        </Column>
+      </Row>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>

@@ -315,7 +315,7 @@ const trainingCertificates: Achievement["training"] = [
 ];
 
 const achievementCertificates: Achievement["achievements"] = [
-    { src: "https://drive.google.com/file/d/1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
+  { src: "https://drive.google.com/file/d/1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
   { src: "https://drive.google.com/file/d/1DRNdyprhLU6iCMjcxbA7cfYWbmsgCLfR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Panitia Mataf 2024" },
   { src: "https://drive.google.com/file/d/1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
   { src: "https://drive.google.com/file/d/1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
