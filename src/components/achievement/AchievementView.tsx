@@ -1,7 +1,7 @@
 "use client";
 
 import { Media, MasonryGrid, Text } from "@once-ui-system/core";
-import { achievement } from "@/resources";
+import { achievement, training } from "@/resources";
 
 type AchievementViewProps = {
   type?: "achievement" | "training" | "all";
@@ -73,7 +73,7 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
 };
 
 export default function AchievementView({ type = "all" }: AchievementViewProps) {
-  const trainingItems = achievement.training ?? [];
+  const trainingItems = training.training ?? [];
   const achievementItems = achievement.achievements ?? [];
 
   if (type === "training") {
