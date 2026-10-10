@@ -17,7 +17,7 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
       </Text>
       <MasonryGrid columns={2} s={{ columns: 1 }}>
         {items.map((image, index) => {
-          const isGoogleDriveImage = image.src.includes("/uc?export=view&id=") || image.src.includes("googleusercontent.com");
+          const isGoogleDriveImage = image.src.includes("/preview?usp=sharing") || image.src.includes("googleusercontent.com");
           const isGoogleDrivePreview = image.src.includes("drive.google.com/file/d/") || image.src.includes("drive.google.com/open?");
 
           return (
