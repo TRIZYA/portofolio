@@ -108,33 +108,40 @@ export default function Home() {
           </RevealFx>
         </Column>
 
-        <Column flex={1} horizontal="center" align="center" style={{ position: "relative" }}>
-          <div style={{ position: "relative", width: "100%", maxWidth: "420px", height: "540px" }}>
-            <img
-              src="/images/home.png"
-              alt={person.name}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "28px",
-                display: "block",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                bottom: 0,
-                height: "34%",
-                borderRadius: "0 0 28px 28px",
-                background:
-                  "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,10,10,0.22) 30%, rgba(10,10,10,0.62) 100%)",
-              }}
-            />
-          </div>
-        </Column>
+        <RevealFx translateY="12" delay={0.45} horizontal="start">
+          <Column
+            flex={1}
+            horizontal="center"
+            align="center"
+            style={{ position: "relative", marginLeft: "24px" }}
+          >
+            <div style={{ position: "relative", width: "100%", maxWidth: "420px", height: "540px" }}>
+              <img
+                src="/images/home.png"
+                alt={person.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "28px",
+                  display: "block",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: "38%",
+                  borderRadius: "0 0 28px 28px",
+                  background:
+                    "linear-gradient(180deg, rgba(2,6,10,0) 0%, rgba(2,6,10,0.12) 26%, rgba(2,6,10,0.55) 100%)",
+                }}
+              />
+            </div>
+          </Column>
+        </RevealFx>
       </Row>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />

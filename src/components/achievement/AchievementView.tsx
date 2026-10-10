@@ -17,14 +17,32 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
       </Text>
       <MasonryGrid columns={2} s={{ columns: 1 }}>
         {items.map((image, index) => {
-          const isGoogleDrivePreview = image.src.includes("drive.google.com");
+          const isGoogleDriveImage = image.src.includes("/uc?export=view&id=") || image.src.includes("googleusercontent.com");
+          const isGoogleDrivePreview = image.src.includes("drive.google.com/file/d/") || image.src.includes("drive.google.com/open?");
 
           return (
             <div
               key={`${title}-${index}`}
               style={{ display: "flex", flexDirection: "column", gap: "12px", overflow: "hidden" }}
             >
-              {isGoogleDrivePreview ? (
+              {isGoogleDriveImage ? (
+                <Media
+                  enlarge
+                  priority={index < 10}
+                  sizes="(max-width: 560px) 100vw, 50vw"
+                  radius="m"
+                  aspectRatio={
+                    image.orientation === "square"
+                      ? "3 / 4"
+                      : image.orientation === "horizontal"
+                        ? "16 / 9"
+                        : "3 / 4"
+                  }
+                  src={image.src}
+                  alt={image.alt}
+                  style={{ overflow: "hidden" }}
+                />
+              ) : isGoogleDrivePreview ? (
                 <div
                   style={{
                     position: "relative",

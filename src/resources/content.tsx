@@ -297,34 +297,36 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const toDriveImage = (fileId: string) => `https://drive.google.com/uc?export=view&id=${fileId}`;
+
 const trainingCertificates: Achievement["training"] = [
-  { src: "https://drive.google.com/file/d/1ErEn1A87zABb6knsY_YeytEuGQ07Bpd3/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ancaman Pembobolan Akun Pribadi dan Pencegahannya" },
-  { src: "https://drive.google.com/file/d/1D8CmdHaMSIVzKZw-Vn-BVOPrlxJBra8B/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Dasar-dasar Keamanan AI" },
-  { src: "https://drive.google.com/file/d/13k5qkrio5Z7qLDFGhIrRgfyus8QN_Vha/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ethical Hacker For Dummies" },
-  { src: "https://drive.google.com/file/d/1QxVMvYON1EuM1ba0c3iVm8fy1VFmheeZ/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Generative AI untuk Pendidikan" },
-  { src: "https://drive.google.com/file/d/1eEUzE9GFdH13aK3ETh1L5BCaP0YC5E6A/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Introduction to Cyber Security and Career Awareness" },
-  { src: "https://drive.google.com/file/d/1PLlsxJiXv_K1yg63c7ICXSb3YEkYiM8P/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Konsep Pemrograman" },
-  { src: "https://drive.google.com/file/d/1bkWNMaI8QvNv9j4lzDwmNfobygnaSCYN/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Memahami Aspek Pengembangan Produk AI" },
-  { src: "https://drive.google.com/file/d/138a-Z0d6wQGdPL1aWeT2jc0yqd1BWNOq/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Pentingnya Menjaga Keamanan Digital: Perlindungan Diri di Dunia Maya" },
-  { src: "https://drive.google.com/file/d/1E3qCeTPZhHMka-_bXE4jWEIYxrsJUaNT/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Seberapa Penting Menjaga Data Pribadi dan Pelindungannya" },
-  { src: "https://drive.google.com/file/d/1VfhOPQtU_oBQRYjSnBm7RMmRkhw_rGW5/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Tips Melindungi Diri Dari Ancaman Phising dan Malware di Era Digital" },
-  { src: "https://drive.google.com/file/d/1S_MJe6Lq7R5TEAK51kY8qCarejlKDvTP/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Event Online DevOps" },
-  { src: "https://drive.google.com/file/d/17296NowVsXIIpAFjVubQiPFA1y2yM2BN/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Webinar Design Thinking To Make Good Digital Business Products" },
-  { src: "https://drive.google.com/file/d/144XOodLa-Ag_5JqersHmbalQTn7l8fUu/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Seminar Teknik Dasar Penggunaan Adobe Photoshop" },
-  { src: "https://drive.google.com/file/d/17ZTevnJwqlSR9RwsHGpiu2OO671-J0rR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif PMKS MPK SMKN 1 Lamongan" },
+  { src: toDriveImage("1ErEn1A87zABb6knsY_YeytEuGQ07Bpd3"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ancaman Pembobolan Akun Pribadi dan Pencegahannya" },
+  { src: toDriveImage("1D8CmdHaMSIVzKZw-Vn-BVOPrlxJBra8B"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Dasar-dasar Keamanan AI" },
+  { src: toDriveImage("13k5qkrio5Z7qLDFGhIrRgfyus8QN_Vha"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ethical Hacker For Dummies" },
+  { src: toDriveImage("1QxVMvYON1EuM1ba0c3iVm8fy1VFmheeZ"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Generative AI untuk Pendidikan" },
+  { src: toDriveImage("1eEUzE9GFdH13aK3ETh1L5BCaP0YC5E6A"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Introduction to Cyber Security and Career Awareness" },
+  { src: toDriveImage("1PLlsxJiXv_K1yg63c7ICXSb3YEkYiM8P"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Konsep Pemrograman" },
+  { src: toDriveImage("1bkWNMaI8QvNv9j4lzDwmNfobygnaSCYN"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Memahami Aspek Pengembangan Produk AI" },
+  { src: toDriveImage("138a-Z0d6wQGdPL1aWeT2jc0yqd1BWNOq"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Pentingnya Menjaga Keamanan Digital: Perlindungan Diri di Dunia Maya" },
+  { src: toDriveImage("1E3qCeTPZhHMka-_bXE4jWEIYxrsJUaNT"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Seberapa Penting Menjaga Data Pribadi dan Pelindungannya" },
+  { src: toDriveImage("1VfhOPQtU_oBQRYjSnBm7RMmRkhw_rGW5"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Tips Melindungi Diri Dari Ancaman Phising dan Malware di Era Digital" },
+  { src: toDriveImage("1S_MJe6Lq7R5TEAK51kY8qCarejlKDvTP"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Event Online DevOps" },
+  { src: toDriveImage("17296NowVsXIIpAFjVubQiPFA1y2yM2BN"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Webinar Design Thinking To Make Good Digital Business Products" },
+  { src: toDriveImage("144XOodLa-Ag_5JqersHmbalQTn7l8fUu"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Seminar Teknik Dasar Penggunaan Adobe Photoshop" },
+  { src: toDriveImage("17ZTevnJwqlSR9RwsHGpiu2OO671-J0rR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif PMKS MPK SMKN 1 Lamongan" },
 ];
 
 const achievementCertificates: Achievement["achievements"] = [
-  { src: "https://drive.google.com/file/d/1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
-  { src: "https://drive.google.com/file/d/1DRNdyprhLU6iCMjcxbA7cfYWbmsgCLfR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Panitia Mataf 2024" },
-  { src: "https://drive.google.com/file/d/1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
-  { src: "https://drive.google.com/file/d/1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
-  { src: "https://drive.google.com/file/d/1ntCkgWAC_LAD6QRFHaHlMkxHJaEfWBan/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Sebagai Peserta Uberalez 2022" },
-  { src: "https://drive.google.com/file/d/1QLoJtVy4-OLjm2W2_JkdjzM4it4tTxqR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Pesantren Kilat Baitul Arqom" },
-  { src: "https://drive.google.com/file/d/10nWf-Y5UCaxnuqBwLqDAApsReGnijYQj/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Mataf UMG 2022" },
-  { src: "https://drive.google.com/file/d/15GeMhk_zznbQjsqcK_tAD8Pg3QqHX0PM/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat D1 Bahasa Inggris DSP2BU UMG" },
-  { src: "https://drive.google.com/file/d/1S8eBT-NSUSjf7u-RGeYwbCby32zzXttd/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat EPT Toefl DSP2BU UMG" },
-  { src: "https://drive.google.com/file/d/1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
+  { src: toDriveImage("1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
+  { src: toDriveImage("1DRNdyprhLU6iCMjcxbA7cfYWbmsgCLfR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Panitia Mataf 2024" },
+  { src: toDriveImage("1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
+  { src: toDriveImage("1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
+  { src: toDriveImage("1ntCkgWAC_LAD6QRFHaHlMkxHJaEfWBan"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Sebagai Peserta Uberalez 2022" },
+  { src: toDriveImage("1QLoJtVy4-OLjm2W2_JkdjzM4it4tTxqR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Pesantren Kilat Baitul Arqom" },
+  { src: toDriveImage("10nWf-Y5UCaxnuqBwLqDAApsReGnijYQj"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Mataf UMG 2022" },
+  { src: toDriveImage("15GeMhk_zznbQjsqcK_tAD8Pg3QqHX0PM"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat D1 Bahasa Inggris DSP2BU UMG" },
+  { src: toDriveImage("1S8eBT-NSUSjf7u-RGeYwbCby32zzXttd"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat EPT Toefl DSP2BU UMG" },
+  { src: toDriveImage("1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv"), alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
 ];
 
 const training: Achievement = {
