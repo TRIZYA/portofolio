@@ -113,7 +113,7 @@ export default function Home() {
             flex={1}
             horizontal="center"
             align="center"
-            style={{ position: "relative", marginLeft: "24px" }}
+            style={{ position: "relative", marginLeft: "56px", transform: "translateX(18px)" }}
           >
             <div style={{ position: "relative", width: "100%", maxWidth: "420px", height: "540px" }}>
               <img
