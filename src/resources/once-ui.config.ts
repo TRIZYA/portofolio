@@ -22,6 +22,7 @@ const routes: RoutesConfig = {
   "/work": true,
   "/blog": true,
   "/achievement": true,
+  "/training": true,
 };
 
 const display: DisplayConfig = {

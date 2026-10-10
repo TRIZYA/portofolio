@@ -8,6 +8,7 @@ export {
   blog,
   work,
   achievement,
+  training,
 } from "./content";
 
 export {

@@ -3,6 +3,10 @@
 import { Media, MasonryGrid, Text } from "@once-ui-system/core";
 import { achievement } from "@/resources";
 
+type AchievementViewProps = {
+  type?: "achievement" | "training" | "all";
+};
+
 const renderGallery = (title: string, items: typeof achievement.training) => {
   if (!items || items.length === 0) return null;
 
@@ -88,11 +92,22 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
   );
 };
 
-export default function AchievementView() {
+export default function AchievementView({ type = "all" }: AchievementViewProps) {
+  const trainingItems = achievement.training ?? [];
+  const achievementItems = achievement.achievements ?? [];
+
+  if (type === "training") {
+    return <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>{renderGallery("Pelatihan", trainingItems)}</div>;
+  }
+
+  if (type === "achievement") {
+    return <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>{renderGallery("Pencapaian", achievementItems)}</div>;
+  }
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-      {renderGallery("Pelatihan", achievement.training ?? [])}
-      {renderGallery("Pencapaian", achievement.achievements ?? [])}
+      {renderGallery("Pelatihan", trainingItems)}
+      {renderGallery("Pencapaian", achievementItems)}
     </div>
   );
 }

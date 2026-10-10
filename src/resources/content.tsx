@@ -311,11 +311,11 @@ const trainingCertificates: Achievement["training"] = [
   { src: "https://drive.google.com/file/d/1S_MJe6Lq7R5TEAK51kY8qCarejlKDvTP/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Event Online DevOps" },
   { src: "https://drive.google.com/file/d/17296NowVsXIIpAFjVubQiPFA1y2yM2BN/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Webinar Design Thinking To Make Good Digital Business Products" },
   { src: "https://drive.google.com/file/d/144XOodLa-Ag_5JqersHmbalQTn7l8fUu/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif Seminar Teknik Dasar Penggunaan Adobe Photoshop" },
-  { src: "https://drive.google.com/file/d/1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
   { src: "https://drive.google.com/file/d/17ZTevnJwqlSR9RwsHGpiu2OO671-J0rR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif PMKS MPK SMKN 1 Lamongan" },
 ];
 
 const achievementCertificates: Achievement["achievements"] = [
+    { src: "https://drive.google.com/file/d/1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
   { src: "https://drive.google.com/file/d/1DRNdyprhLU6iCMjcxbA7cfYWbmsgCLfR/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Panitia Mataf 2024" },
   { src: "https://drive.google.com/file/d/1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
   { src: "https://drive.google.com/file/d/1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ/preview?usp=sharing", alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
@@ -327,14 +327,24 @@ const achievementCertificates: Achievement["achievements"] = [
   { src: "https://drive.google.com/file/d/1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv/preview?usp=sharing", alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
 ];
 
+const training: Achievement = {
+  path: "/training",
+  label: "Pelatihan",
+  title: `Pelatihan – ${person.name}`,
+  description: `Koleksi pelatihan oleh ${person.name}`,
+  training: trainingCertificates,
+  achievements: [],
+  images: trainingCertificates,
+};
+
 const achievement: Achievement = {
   path: "/achievement",
   label: "Pencapaian",
   title: `Pencapaian – ${person.name}`,
-  description: `Koleksi pelatihan dan pencapaian oleh ${person.name}`,
-  training: trainingCertificates,
+  description: `Koleksi pencapaian oleh ${person.name}`,
+  training: [],
   achievements: achievementCertificates,
-  images: [...trainingCertificates, ...achievementCertificates],
+  images: achievementCertificates,
 };
 
-export { person, social, newsletter, home, about, blog, work, achievement };
+export { person, social, newsletter, home, about, blog, work, achievement, training };
