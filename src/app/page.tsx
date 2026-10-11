@@ -92,6 +92,7 @@ export default function Home() {
                 justifyContent: "center",
                 width: "100%",
                 maxWidth: "460px",
+                flex: "0 0 460px",
                 justifySelf: "start",
                 order: 2,
                 flexShrink: 0,
@@ -147,8 +148,9 @@ export default function Home() {
           className={styles.heroCopy}
           style={{
             minWidth: 0,
-            width: "100%",
-            maxWidth: 620,
+            width: "620px",
+            maxWidth: "100%",
+            flex: "0 0 620px",
             flexShrink: 0,
           }}
         >
