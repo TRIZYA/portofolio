@@ -46,7 +46,7 @@ export default function Home() {
         gap="40"
         vertical="center"
         s={{ direction: "column" }}
-        style={{ alignItems: "center" }}
+        style={{ alignItems: "center", justifyContent: "space-between" }}
       >
         <Column flex={1} maxWidth={620} horizontal="start" align="start" gap="m">
           {home.featured.display && (
@@ -113,9 +113,24 @@ export default function Home() {
             flex={1}
             horizontal="center"
             align="center"
-            style={{ position: "relative", marginLeft: "56px", transform: "translateX(18px)" }}
+            style={{
+              position: "relative",
+              marginLeft: "auto",
+              marginRight: "0",
+              paddingLeft: "24px",
+            }}
           >
-            <div style={{ position: "relative", width: "100%", maxWidth: "420px", height: "540px" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "420px",
+                height: "540px",
+                overflow: "hidden",
+                borderRadius: "28px",
+                background: "linear-gradient(180deg, rgba(7,10,15,0.15), rgba(7,10,15,0.5))",
+              }}
+            >
               <img
                 src="/images/home.png"
                 alt={person.name}
@@ -123,8 +138,8 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  borderRadius: "28px",
                   display: "block",
+                  filter: "drop-shadow(0 16px 30px rgba(0,0,0,0.25))",
                 }}
               />
               <div
@@ -134,9 +149,9 @@ export default function Home() {
                   right: 0,
                   bottom: 0,
                   height: "38%",
-                  borderRadius: "0 0 28px 28px",
                   background:
-                    "linear-gradient(180deg, rgba(2,6,10,0) 0%, rgba(2,6,10,0.12) 26%, rgba(2,6,10,0.55) 100%)",
+                    "linear-gradient(180deg, rgba(4,8,14,0) 0%, rgba(4,8,14,0.06) 24%, rgba(4,8,14,0.45) 100%)",
+                  pointerEvents: "none",
                 }}
               />
             </div>
