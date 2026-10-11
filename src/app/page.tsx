@@ -116,8 +116,14 @@ export default function Home() {
                     objectFit: "cover",
                     objectPosition: "center left",
                     display: "block",
-                    WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
-                    maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%)",
+                    maskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%)",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "100% 100%",
+                    maskSize: "100% 100%",
                   }}
                 />
                 <div
