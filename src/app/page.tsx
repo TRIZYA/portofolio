@@ -63,6 +63,7 @@ export default function Home() {
               fillWidth
               horizontal="center"
               className={styles.mobileFeaturedBadge}
+              style={{ order: 1 }}
             >
               <Badge
                 className={styles.heroBadge}
@@ -79,7 +80,7 @@ export default function Home() {
             </RevealFx>
           )}
 
-          <RevealFx translateY="12" delay={0.45} horizontal="start">
+          <RevealFx translateY="12" delay={0.45} horizontal="start" style={{ order: 2 }}>
             <Column
               flex={1}
               horizontal="center"
@@ -91,6 +92,7 @@ export default function Home() {
                 justifyContent: "center",
                 width: "100%",
                 justifySelf: "end",
+                order: 2,
               }}
             >
               <div
