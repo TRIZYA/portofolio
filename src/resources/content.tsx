@@ -297,7 +297,7 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const toDriveImage = (fileId: string) => `https://drive.usercontent.google.com/download?id=${fileId}&export=view`;
+const toDriveImage = (fileId: string) => `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
 const toDrivePreview = (fileId: string) => `https://drive.google.com/file/d/${fileId}/preview`;
 
 const trainingCertificates: Achievement["training"] = [

@@ -20,6 +20,7 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
           const src = image.src.toLowerCase();
           const isGoogleDrivePdf = src.includes("drive.google.com/file/d/") && (src.includes("/preview") || src.includes("/view"));
           const isGoogleDriveImage =
+            src.includes("drive.google.com/thumbnail") ||
             src.includes("drive.google.com/uc") ||
             src.includes("drive.usercontent.google.com") ||
             src.includes("googleusercontent.com");
