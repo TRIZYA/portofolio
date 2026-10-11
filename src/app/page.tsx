@@ -90,19 +90,18 @@ export default function Home() {
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
-                width: "100%",
+                width: "460px",
                 maxWidth: "460px",
                 flex: "0 0 460px",
                 justifySelf: "start",
                 order: 2,
-                flexShrink: 0,
               }}
             >
               <div
                 className={styles.heroPortrait}
                 style={{
                   position: "relative",
-                  width: "100%",
+                  width: "460px",
                   maxWidth: "460px",
                   minWidth: 0,
                   height: "560px",
@@ -110,7 +109,7 @@ export default function Home() {
                   borderRadius: "28px",
                   marginLeft: 0,
                   marginRight: "18px",
-                  flexShrink: 0,
+                  flex: "0 0 460px",
                 }}
               >
                 <img
@@ -149,7 +148,7 @@ export default function Home() {
           style={{
             minWidth: 0,
             width: "620px",
-            maxWidth: "100%",
+            maxWidth: "620px",
             flex: "0 0 620px",
             flexShrink: 0,
           }}
