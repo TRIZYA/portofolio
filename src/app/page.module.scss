@@ -54,9 +54,8 @@
 }
 
 .heroPortrait {
-  margin-left: 0;
-  margin-right: 18px;
-  transform: translateX(-8px);
+  margin: 0;
+  transform: none;
 }
 
 @media (max-width: 768px) {

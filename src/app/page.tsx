@@ -91,7 +91,8 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 width: "100%",
-                justifySelf: "start",
+                maxWidth: "520px",
+                justifySelf: "center",
                 order: 2,
               }}
             >
@@ -104,8 +105,7 @@ export default function Home() {
                   height: "560px",
                   overflow: "hidden",
                   borderRadius: "28px",
-                  marginLeft: 0,
-                  marginRight: "18px",
+                  margin: 0,
                 }}
               >
                 <img
