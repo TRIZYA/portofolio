@@ -54,7 +54,6 @@ export default function Home() {
       >
         <Column
           flex={1}
-          maxWidth={620}
           horizontal="start"
           align="start"
           gap="m"
@@ -62,6 +61,7 @@ export default function Home() {
           style={{
             minWidth: 0,
             width: "100%",
+            maxWidth: 620,
           }}
         >
           {home.featured.display && (
