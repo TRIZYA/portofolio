@@ -1,6 +1,6 @@
 .heroRow {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(420px, 500px);
+  grid-template-columns: minmax(0, 1.35fr) minmax(420px, 540px);
   align-items: center;
   column-gap: 42px;
   width: 100%;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: flex-start;
   margin-left: 0;
-  max-width: 700px;
+  max-width: 650px;
 }
 
 .heroBadge {
