@@ -22,11 +22,16 @@
 }
 
 .mobileHeroMedia {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .mobileFeaturedBadge {
-  display: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .heroHeading,
