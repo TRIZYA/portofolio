@@ -52,6 +52,26 @@ export default function Home() {
           maxWidth: "1320px",
         }}
       >
+        {home.featured.display && (
+          <RevealFx
+            fillWidth
+            horizontal="center"
+            className={styles.mobileFeaturedBadge}
+          >
+            <Badge
+              className={styles.heroBadge}
+              background="brand-alpha-weak"
+              paddingX="12"
+              paddingY="4"
+              onBackground="neutral-strong"
+              textVariant="label-default-s"
+              arrow={false}
+              href={home.featured.href}
+            >
+              <Row paddingY="2">{home.featured.title}</Row>
+            </Badge>
+          </RevealFx>
+        )}
         <Column
           flex={1}
           horizontal="start"
@@ -130,26 +150,6 @@ export default function Home() {
           </RevealFx>
         </Column>
 
-        {home.featured.display && (
-          <RevealFx
-            fillWidth
-            horizontal="center"
-            className={styles.mobileFeaturedBadge}
-          >
-            <Badge
-              className={styles.heroBadge}
-              background="brand-alpha-weak"
-              paddingX="12"
-              paddingY="4"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              arrow={false}
-              href={home.featured.href}
-            >
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
-        )}
         <RevealFx translateY="12" delay={0.45} horizontal="start">
           <Column
             flex={1}

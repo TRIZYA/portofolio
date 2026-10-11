@@ -73,6 +73,12 @@
     order: 3;
   }
 
+  .heroPortraitWrap {
+    order: 2;
+    margin-top: 0;
+    width: 100%;
+  }
+
   .heroCopy > * {
     text-align: center !important;
   }
@@ -94,12 +100,6 @@
 
   .heroCta {
     margin: 0 auto;
-  }
-
-  .heroPortraitWrap {
-    order: 2;
-    margin-top: 0;
-    width: 100%;
   }
 
   .heroPortrait {
