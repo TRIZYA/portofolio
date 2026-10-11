@@ -14,6 +14,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import styles from "./page.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -45,11 +46,8 @@ export default function Home() {
         fillWidth
         gap="24"
         vertical="center"
-        className="hero-row"
+        className={styles.heroRow}
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
           width: "100%",
           maxWidth: "1320px",
         }}
@@ -60,12 +58,10 @@ export default function Home() {
           horizontal="start"
           align="start"
           gap="m"
-          className="hero-copy"
+          className={styles.heroCopy}
           style={{
             minWidth: 0,
             width: "100%",
-            display: "flex",
-            alignItems: "flex-start",
           }}
         >
           {home.featured.display && (
@@ -111,7 +107,7 @@ export default function Home() {
               size="m"
               weight="default"
               arrowIcon
-              className="hero-cta"
+              className={styles.heroCta}
             >
               <Row gap="8" vertical="center" paddingRight="4">
                 {about.avatar.display && (
@@ -133,7 +129,7 @@ export default function Home() {
             flex={1}
             horizontal="center"
             align="center"
-            className="hero-portrait-wrap"
+            className={styles.heroPortraitWrap}
             style={{
               position: "relative",
               display: "flex",
@@ -143,7 +139,7 @@ export default function Home() {
             }}
           >
             <div
-              className="hero-portrait"
+              className={styles.heroPortrait}
               style={{
                 position: "relative",
                 width: "100%",
@@ -183,37 +179,6 @@ export default function Home() {
           </Column>
         </RevealFx>
       </Row>
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .hero-row {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .hero-copy {
-            align-items: center !important;
-            text-align: center;
-          }
-
-          .hero-copy > * {
-            text-align: center !important;
-          }
-
-          .hero-cta {
-            margin: 0 auto;
-          }
-
-          .hero-portrait-wrap {
-            margin-top: 24px;
-          }
-
-          .hero-portrait {
-            margin-left: 0 !important;
-            max-width: 100%;
-            height: 420px;
-          }
-        }
-      `}</style>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
