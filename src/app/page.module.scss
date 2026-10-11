@@ -1,7 +1,8 @@
 .heroRow {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 540px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 620px);
   align-items: center;
+  column-gap: 56px;
   width: 100%;
   max-width: 1320px;
 }
@@ -9,6 +10,7 @@
 .heroCopy {
   display: flex;
   align-items: flex-start;
+  margin-left: 20px;
 }
 
 .heroBadge {
@@ -22,16 +24,11 @@
 }
 
 .mobileHeroMedia {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  display: none;
 }
 
 .mobileFeaturedBadge {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  display: none;
 }
 
 .heroHeading,
@@ -53,7 +50,7 @@
 }
 
 .heroPortrait {
-  margin-left: 72px;
+  margin-left: -18px;
 }
 
 @media (max-width: 768px) {
