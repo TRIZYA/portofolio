@@ -91,7 +91,7 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "center",
                 width: "100%",
-                maxWidth: "520px",
+                maxWidth: "460px",
                 justifySelf: "center",
                 order: 2,
               }}
@@ -101,8 +101,8 @@ export default function Home() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  maxWidth: "460px",
-                  height: "560px",
+                  maxWidth: "420px",
+                  height: "520px",
                   overflow: "hidden",
                   borderRadius: "28px",
                   margin: 0,
