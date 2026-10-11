@@ -43,11 +43,11 @@ export default function Home() {
       />
       <Row
         fillWidth
-        gap="32"
+        gap="24"
         vertical="center"
         s={{ direction: "column" }}
         style={{
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
           maxWidth: "1280px",
@@ -128,24 +128,24 @@ export default function Home() {
             style={{
               position: "relative",
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: "center",
               marginLeft: "auto",
               marginRight: "0",
-              paddingLeft: "24px",
-              minWidth: "300px",
+              paddingLeft: "8px",
+              minWidth: "280px",
             }}
           >
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "480px",
-                minWidth: "360px",
-                height: "560px",
+                maxWidth: "440px",
+                minWidth: "300px",
+                height: "520px",
                 overflow: "hidden",
                 borderRadius: "28px",
-                transform: "translateX(18px)",
-                background: "linear-gradient(180deg, rgba(7,10,15,0.15), rgba(7,10,15,0.5))",
+                transform: "translateX(8px)",
+                background: "linear-gradient(180deg, rgba(7,10,15,0.12), rgba(7,10,15,0.45))",
               }}
             >
               <img
@@ -165,9 +165,9 @@ export default function Home() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  height: "42%",
+                  height: "30%",
                   background:
-                    "linear-gradient(180deg, rgba(3, 7, 12, 0) 0%, rgba(3,7,12,0.08) 30%, rgba(3,7,12,0.62) 100%)",
+                    "linear-gradient(180deg, rgba(3, 7, 12, 0) 0%, rgba(3,7,12,0.08) 35%, rgba(3,7,12,0.4) 100%)",
                   pointerEvents: "none",
                 }}
               />
