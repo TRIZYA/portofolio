@@ -116,6 +116,8 @@ export default function Home() {
                     objectFit: "cover",
                     objectPosition: "center left",
                     display: "block",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                    maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
                   }}
                 />
                 <div
