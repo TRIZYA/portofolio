@@ -43,12 +43,24 @@ export default function Home() {
       />
       <Row
         fillWidth
-        gap="40"
+        gap="32"
         vertical="center"
         s={{ direction: "column" }}
-        style={{ alignItems: "center", justifyContent: "space-between" }}
+        style={{
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          width: "100%",
+          maxWidth: "1280px",
+        }}
       >
-        <Column flex={1} maxWidth={620} horizontal="start" align="start" gap="m">
+        <Column
+          flex={1}
+          maxWidth={620}
+          horizontal="start"
+          align="start"
+          gap="m"
+          style={{ minWidth: 0 }}
+        >
           {home.featured.display && (
             <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
               <Badge
@@ -115,19 +127,24 @@ export default function Home() {
             align="center"
             style={{
               position: "relative",
+              display: "flex",
+              justifyContent: "flex-end",
               marginLeft: "auto",
               marginRight: "0",
               paddingLeft: "24px",
+              minWidth: "300px",
             }}
           >
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "420px",
-                height: "540px",
+                maxWidth: "480px",
+                minWidth: "360px",
+                height: "560px",
                 overflow: "hidden",
                 borderRadius: "28px",
+                transform: "translateX(18px)",
                 background: "linear-gradient(180deg, rgba(7,10,15,0.15), rgba(7,10,15,0.5))",
               }}
             >
@@ -139,7 +156,7 @@ export default function Home() {
                   height: "100%",
                   objectFit: "cover",
                   display: "block",
-                  filter: "drop-shadow(0 16px 30px rgba(0,0,0,0.25))",
+                  filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.26))",
                 }}
               />
               <div
@@ -148,9 +165,9 @@ export default function Home() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  height: "38%",
+                  height: "42%",
                   background:
-                    "linear-gradient(180deg, rgba(4,8,14,0) 0%, rgba(4,8,14,0.06) 24%, rgba(4,8,14,0.45) 100%)",
+                    "linear-gradient(180deg, rgba(3, 7, 12, 0) 0%, rgba(3,7,12,0.08) 30%, rgba(3,7,12,0.62) 100%)",
                   pointerEvents: "none",
                 }}
               />
