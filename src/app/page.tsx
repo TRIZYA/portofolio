@@ -47,8 +47,9 @@ export default function Home() {
         vertical="center"
         s={{ direction: "column" }}
         style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1.2fr) minmax(260px, 520px)",
           alignItems: "center",
-          justifyContent: "space-between",
           width: "100%",
           maxWidth: "1280px",
         }}
@@ -59,7 +60,7 @@ export default function Home() {
           horizontal="start"
           align="start"
           gap="m"
-          style={{ minWidth: 0 }}
+          style={{ minWidth: 0, width: "100%" }}
         >
           {home.featured.display && (
             <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
@@ -129,10 +130,8 @@ export default function Home() {
               position: "relative",
               display: "flex",
               justifyContent: "center",
-              marginLeft: "auto",
-              marginRight: "0",
-              paddingLeft: "8px",
-              minWidth: "280px",
+              width: "100%",
+              justifySelf: "end",
             }}
           >
             <div
@@ -140,11 +139,10 @@ export default function Home() {
                 position: "relative",
                 width: "100%",
                 maxWidth: "440px",
-                minWidth: "300px",
                 height: "520px",
                 overflow: "hidden",
                 borderRadius: "28px",
-                transform: "translateX(8px)",
+                marginLeft: "auto",
                 background: "linear-gradient(180deg, rgba(7,10,15,0.12), rgba(7,10,15,0.45))",
               }}
             >
