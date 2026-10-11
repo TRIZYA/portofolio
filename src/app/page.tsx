@@ -92,8 +92,9 @@ export default function Home() {
                 justifyContent: "center",
                 width: "100%",
                 maxWidth: "460px",
-                justifySelf: "center",
+                justifySelf: "start",
                 order: 2,
+                flexShrink: 0,
               }}
             >
               <div
@@ -101,11 +102,14 @@ export default function Home() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  maxWidth: "420px",
-                  height: "520px",
+                  maxWidth: "460px",
+                  minWidth: 0,
+                  height: "560px",
                   overflow: "hidden",
                   borderRadius: "28px",
-                  margin: 0,
+                  marginLeft: 0,
+                  marginRight: "18px",
+                  flexShrink: 0,
                 }}
               >
                 <img
@@ -145,6 +149,7 @@ export default function Home() {
             minWidth: 0,
             width: "100%",
             maxWidth: 620,
+            flexShrink: 0,
           }}
         >
           {home.featured.display && (
