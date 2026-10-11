@@ -1,8 +1,8 @@
 .heroRow {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 560px);
+  grid-template-columns: minmax(0, 1.35fr) minmax(420px, 700px);
   align-items: center;
-  column-gap: 28px;
+  column-gap: 42px;
   width: 100%;
   max-width: 1320px;
 }
@@ -10,7 +10,8 @@
 .heroCopy {
   display: flex;
   align-items: flex-start;
-  margin-left: 8px;
+  margin-left: 0;
+  max-width: 700px;
 }
 
 .heroBadge {
@@ -54,7 +55,8 @@
 
 .heroPortrait {
   margin-left: 0;
-  transform: translateX(-12px);
+  margin-right: 18px;
+  transform: translateX(-8px);
 }
 
 @media (max-width: 768px) {
