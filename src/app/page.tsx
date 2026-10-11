@@ -52,26 +52,84 @@ export default function Home() {
           maxWidth: "1320px",
         }}
       >
-        {home.featured.display && (
-          <RevealFx
-            fillWidth
-            horizontal="center"
-            className={styles.mobileFeaturedBadge}
-          >
-            <Badge
-              className={styles.heroBadge}
-              background="brand-alpha-weak"
-              paddingX="12"
-              paddingY="4"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
-              arrow={false}
-              href={home.featured.href}
+        <Column
+          flex={1}
+          horizontal="center"
+          align="center"
+          className={styles.mobileHeroMedia}
+        >
+          {home.featured.display && (
+            <RevealFx
+              fillWidth
+              horizontal="center"
+              className={styles.mobileFeaturedBadge}
             >
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
+              <Badge
+                className={styles.heroBadge}
+                background="brand-alpha-weak"
+                paddingX="12"
+                paddingY="4"
+                onBackground="neutral-strong"
+                textVariant="label-default-s"
+                arrow={false}
+                href={home.featured.href}
+              >
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </RevealFx>
+          )}
+
+          <RevealFx translateY="12" delay={0.45} horizontal="start">
+            <Column
+              flex={1}
+              horizontal="center"
+              align="center"
+              className={styles.heroPortraitWrap}
+              style={{
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                justifySelf: "end",
+              }}
+            >
+              <div
+                className={styles.heroPortrait}
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  maxWidth: "460px",
+                  height: "560px",
+                  overflow: "hidden",
+                  borderRadius: "28px",
+                  marginLeft: "72px",
+                }}
+              >
+                <img
+                  src="/images/home.png"
+                  alt={person.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center left",
+                    display: "block",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: "30%",
+                    pointerEvents: "none",
+                  }}
+                />
+              </div>
+            </Column>
           </RevealFx>
-        )}
+        </Column>
         <Column
           flex={1}
           horizontal="start"
@@ -150,56 +208,6 @@ export default function Home() {
           </RevealFx>
         </Column>
 
-        <RevealFx translateY="12" delay={0.45} horizontal="start">
-          <Column
-            flex={1}
-            horizontal="center"
-            align="center"
-            className={styles.heroPortraitWrap}
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-              width: "100%",
-              justifySelf: "end",
-            }}
-          >
-            <div
-              className={styles.heroPortrait}
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "460px",
-                height: "560px",
-                overflow: "hidden",
-                borderRadius: "28px",
-                marginLeft: "72px",
-              }}
-            >
-              <img
-                src="/images/home.png"
-                alt={person.name}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center left",
-                  display: "block",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: "30%",
-                  pointerEvents: "none",
-                }}
-              />
-            </div>
-          </Column>
-        </RevealFx>
       </Row>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />

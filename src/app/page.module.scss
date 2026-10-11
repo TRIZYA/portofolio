@@ -21,6 +21,10 @@
   display: block;
 }
 
+.mobileHeroMedia {
+  display: none;
+}
+
 .mobileFeaturedBadge {
   display: none;
 }
@@ -59,12 +63,20 @@
     display: none;
   }
 
+  .mobileHeroMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    order: 1;
+    gap: 12px;
+  }
+
   .mobileFeaturedBadge {
     display: flex;
     justify-content: center;
     width: 100%;
     order: 1;
-    margin-bottom: 12px;
   }
 
   .heroCopy {
