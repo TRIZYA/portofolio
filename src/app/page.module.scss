@@ -9,6 +9,22 @@
   align-items: flex-start;
 }
 
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroHeading,
+.heroText {
+  text-align: left;
+}
+
+.heroButtonWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .heroCta {
   margin: 0;
 }
@@ -34,6 +50,20 @@
 
   .heroCopy > * {
     text-align: center !important;
+  }
+
+  .heroBadge {
+    margin: 0 auto;
+  }
+
+  .heroHeading,
+  .heroText {
+    text-align: center !important;
+  }
+
+  .heroButtonWrap {
+    justify-content: center !important;
+    width: 100%;
   }
 
   .heroCta {

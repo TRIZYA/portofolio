@@ -67,6 +67,7 @@ export default function Home() {
           {home.featured.display && (
             <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
               <Badge
+                className={styles.heroBadge}
                 background="brand-alpha-weak"
                 paddingX="12"
                 paddingY="4"
@@ -83,7 +84,7 @@ export default function Home() {
             <Heading
               wrap="balance"
               variant="display-strong-l"
-              style={{ textAlign: "left" }}
+              className={styles.heroHeading}
             >
               {home.headline}
             </Heading>
@@ -93,12 +94,17 @@ export default function Home() {
               wrap="balance"
               onBackground="neutral-weak"
               variant="heading-default-xl"
-              style={{ textAlign: "left" }}
+              className={styles.heroText}
             >
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="start">
+          <RevealFx
+            paddingTop="12"
+            delay={0.4}
+            horizontal="start"
+            className={styles.heroButtonWrap}
+          >
             <Button
               id="about"
               data-border="rounded"
