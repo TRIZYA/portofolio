@@ -19,7 +19,10 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
         {items.map((image, index) => {
           const src = image.src.toLowerCase();
           const isGoogleDrivePdf = src.includes("drive.google.com/file/d/") && (src.includes("/preview") || src.includes("/view"));
-          const isGoogleDriveImage = src.includes("drive.google.com/uc") || src.includes("googleusercontent.com");
+          const isGoogleDriveImage =
+            src.includes("drive.google.com/uc") ||
+            src.includes("drive.usercontent.google.com") ||
+            src.includes("googleusercontent.com");
 
           return (
             <div
@@ -55,6 +58,20 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
                     loading="lazy"
                   />
                 </div>
+              ) : isGoogleDriveImage ? (
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  referrerPolicy="no-referrer"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "8px",
+                    objectFit: "cover",
+                    background: "#0f1115",
+                  }}
+                />
               ) : (
                 <Media
                   enlarge
