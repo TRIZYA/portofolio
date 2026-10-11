@@ -47,22 +47,10 @@
     grid-template-columns: none;
   }
 
-  .heroPortraitWrap {
-    order: -1;
-    margin-top: 0;
-    width: 100%;
-  }
-
-  .heroPortrait {
-    margin-left: 0 !important;
-    max-width: 100%;
-    height: 420px !important;
-  }
-
   .heroCopy {
     align-items: center !important;
     text-align: center;
-    order: 1;
+    order: 2;
   }
 
   .heroCopy > * {
@@ -71,6 +59,7 @@
 
   .heroBadge {
     margin: 0 auto;
+    order: 1;
   }
 
   .heroHeading,
@@ -81,9 +70,22 @@
   .heroButtonWrap {
     justify-content: center !important;
     width: 100%;
+    order: 1;
   }
 
   .heroCta {
     margin: 0 auto;
+  }
+
+  .heroPortraitWrap {
+    order: 3;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .heroPortrait {
+    margin-left: 0 !important;
+    max-width: 100%;
+    height: 420px !important;
   }
 }
