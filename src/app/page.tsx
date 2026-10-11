@@ -165,7 +165,6 @@ export default function Home() {
                   objectFit: "cover",
                   objectPosition: "center left",
                   display: "block",
-                  filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.26))",
                 }}
               />
               <div
@@ -175,8 +174,6 @@ export default function Home() {
                   right: 0,
                   bottom: 0,
                   height: "30%",
-                  background:
-                    "linear-gradient(180deg, rgba(3, 7, 12, 0) 0%, rgba(3,7,12,0.08) 35%, rgba(3,7,12,0.4) 100%)",
                   pointerEvents: "none",
                 }}
               />
