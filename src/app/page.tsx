@@ -45,11 +45,11 @@ export default function Home() {
         fillWidth
         gap="24"
         vertical="center"
-        s={{ direction: "column" }}
+        className="hero-row"
         style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1.2fr) minmax(280px, 540px)",
+          display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
           width: "100%",
           maxWidth: "1320px",
         }}
@@ -60,7 +60,13 @@ export default function Home() {
           horizontal="start"
           align="start"
           gap="m"
-          style={{ minWidth: 0, width: "100%" }}
+          className="hero-copy"
+          style={{
+            minWidth: 0,
+            width: "100%",
+            display: "flex",
+            alignItems: "flex-start",
+          }}
         >
           {home.featured.display && (
             <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
@@ -105,6 +111,7 @@ export default function Home() {
               size="m"
               weight="default"
               arrowIcon
+              className="hero-cta"
             >
               <Row gap="8" vertical="center" paddingRight="4">
                 {about.avatar.display && (
@@ -126,6 +133,7 @@ export default function Home() {
             flex={1}
             horizontal="center"
             align="center"
+            className="hero-portrait-wrap"
             style={{
               position: "relative",
               display: "flex",
@@ -135,6 +143,7 @@ export default function Home() {
             }}
           >
             <div
+              className="hero-portrait"
               style={{
                 position: "relative",
                 width: "100%",
@@ -174,6 +183,37 @@ export default function Home() {
           </Column>
         </RevealFx>
       </Row>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .hero-row {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .hero-copy {
+            align-items: center !important;
+            text-align: center;
+          }
+
+          .hero-copy > * {
+            text-align: center !important;
+          }
+
+          .hero-cta {
+            margin: 0 auto;
+          }
+
+          .hero-portrait-wrap {
+            margin-top: 24px;
+          }
+
+          .hero-portrait {
+            margin-left: 0 !important;
+            max-width: 100%;
+            height: 420px;
+          }
+        }
+      `}</style>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
