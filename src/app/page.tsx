@@ -48,10 +48,10 @@ export default function Home() {
         s={{ direction: "column" }}
         style={{
           display: "grid",
-          gridTemplateColumns: "minmax(0, 1.2fr) minmax(260px, 520px)",
+          gridTemplateColumns: "minmax(0, 1.2fr) minmax(280px, 540px)",
           alignItems: "center",
           width: "100%",
-          maxWidth: "1280px",
+          maxWidth: "1320px",
         }}
       >
         <Column
@@ -138,11 +138,11 @@ export default function Home() {
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "440px",
-                height: "520px",
+                maxWidth: "460px",
+                height: "560px",
                 overflow: "hidden",
                 borderRadius: "28px",
-                marginLeft: "auto",
+                marginLeft: "72px",
                 background: "linear-gradient(180deg, rgba(7,10,15,0.12), rgba(7,10,15,0.45))",
               }}
             >
@@ -153,6 +153,7 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                  objectPosition: "center left",
                   display: "block",
                   filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.26))",
                 }}
