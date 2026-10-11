@@ -1,19 +1,19 @@
 .heroRow {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 620px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 520px);
   align-items: center;
-  column-gap: 36px;
-  width: 100%;
+  column-gap: clamp(24px, 3vw, 42px);
+  width: min(100%, 1320px);
   max-width: 1320px;
+  min-width: 0;
 }
 
 .heroCopy {
   display: flex;
   align-items: flex-start;
   margin-left: 0;
-  width: 620px;
-  max-width: 620px;
-  min-width: 620px;
+  max-width: 700px;
+  min-width: 0;
 }
 
 .heroBadge {
@@ -53,19 +53,13 @@
 
 .heroPortraitWrap {
   margin-top: 0;
-  width: 460px;
-  max-width: 460px;
-  min-width: 460px;
-  flex-shrink: 0;
 }
 
 .heroPortrait {
-  width: 420px;
-  height: 520px;
-  margin: 0 auto;
-  transform: none;
-  overflow: hidden;
-  border-radius: 28px;
+  width: min(100%, 460px);
+  margin-left: 0;
+  margin-right: clamp(0px, 1vw, 18px);
+  transform: translateX(-8px);
 }
 
 @media (max-width: 768px) {
