@@ -28,7 +28,7 @@ export default function AchievementPage() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <AchievementView />
+      <AchievementView type="achievement" />
     </Flex>
   );
 }

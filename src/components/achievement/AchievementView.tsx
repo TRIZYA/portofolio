@@ -17,30 +17,44 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
       </Text>
       <MasonryGrid columns={2} s={{ columns: 1 }}>
         {items.map((image, index) => {
-          const isGoogleDrivePreview = image.src.includes("drive.google.com") || image.src.includes("googleusercontent.com");
+          const src = image.src.toLowerCase();
+          const isGoogleDrivePdf = src.includes("drive.google.com/file/d/") && (src.includes("/preview") || src.includes("/view"));
+          const isGoogleDriveImage = src.includes("drive.google.com/uc") || src.includes("googleusercontent.com");
 
           return (
             <div
               key={`${title}-${index}`}
               style={{ display: "flex", flexDirection: "column", gap: "12px", overflow: "hidden" }}
             >
-              {isGoogleDrivePreview ? (
-                <Media
-                  enlarge
-                  priority={index < 10}
-                  sizes="(max-width: 560px) 100vw, 50vw"
-                  radius="m"
-                  aspectRatio={
-                    image.orientation === "square"
-                      ? "3 / 4"
-                      : image.orientation === "horizontal"
-                        ? "16 / 9"
-                        : "3 / 4"
-                  }
-                  src={image.src}
-                  alt={image.alt}
-                  style={{ overflow: "hidden" }}
-                />
+              {isGoogleDrivePdf ? (
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    minHeight: "420px",
+                    height: image.orientation === "horizontal" ? "460px" : "560px",
+                    overflow: "hidden",
+                    borderRadius: "8px",
+                    background: "#0f1115",
+                  }}
+                >
+                  <iframe
+                    src={image.src}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                      borderRadius: "8px",
+                      background: "#fff",
+                    }}
+                    title={image.alt}
+                    allow="fullscreen"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
               ) : (
                 <Media
                   enlarge

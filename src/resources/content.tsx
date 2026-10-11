@@ -298,6 +298,7 @@ const work: Work = {
 };
 
 const toDriveImage = (fileId: string) => `https://drive.google.com/uc?export=view&id=${fileId}`;
+const toDrivePreview = (fileId: string) => `https://drive.google.com/file/d/${fileId}/preview`;
 
 const trainingCertificates: Achievement["training"] = [
   { src: toDriveImage("1ErEn1A87zABb6knsY_YeytEuGQ07Bpd3"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ancaman Pembobolan Akun Pribadi dan Pencegahannya" },
