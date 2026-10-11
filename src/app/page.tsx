@@ -65,7 +65,7 @@ export default function Home() {
           }}
         >
           {home.featured.display && (
-            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32">
+            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" className={styles.desktopFeaturedBadge}>
               <Badge
                 className={styles.heroBadge}
                 background="brand-alpha-weak"
@@ -130,6 +130,26 @@ export default function Home() {
           </RevealFx>
         </Column>
 
+        {home.featured.display && (
+          <RevealFx
+            fillWidth
+            horizontal="center"
+            className={styles.mobileFeaturedBadge}
+          >
+            <Badge
+              className={styles.heroBadge}
+              background="brand-alpha-weak"
+              paddingX="12"
+              paddingY="4"
+              onBackground="neutral-strong"
+              textVariant="label-default-s"
+              arrow={false}
+              href={home.featured.href}
+            >
+              <Row paddingY="2">{home.featured.title}</Row>
+            </Badge>
+          </RevealFx>
+        )}
         <RevealFx translateY="12" delay={0.45} horizontal="start">
           <Column
             flex={1}

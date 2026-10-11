@@ -17,6 +17,14 @@
   justify-content: center;
 }
 
+.desktopFeaturedBadge {
+  display: block;
+}
+
+.mobileFeaturedBadge {
+  display: none;
+}
+
 .heroHeading,
 .heroText {
   text-align: left;
@@ -47,10 +55,22 @@
     grid-template-columns: none;
   }
 
+  .desktopFeaturedBadge {
+    display: none;
+  }
+
+  .mobileFeaturedBadge {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    order: 1;
+    margin-bottom: 12px;
+  }
+
   .heroCopy {
     align-items: center !important;
     text-align: center;
-    order: 2;
+    order: 3;
   }
 
   .heroCopy > * {
@@ -59,7 +79,6 @@
 
   .heroBadge {
     margin: 0 auto;
-    order: 1;
   }
 
   .heroHeading,
@@ -78,8 +97,8 @@
   }
 
   .heroPortraitWrap {
-    order: 3;
-    margin-top: 24px;
+    order: 2;
+    margin-top: 0;
     width: 100%;
   }
 
