@@ -154,7 +154,6 @@ export default function Home() {
                 overflow: "hidden",
                 borderRadius: "28px",
                 marginLeft: "72px",
-                background: "linear-gradient(180deg, rgba(7,10,15,0.12), rgba(7,10,15,0.45))",
               }}
             >
               <img
@@ -166,6 +165,7 @@ export default function Home() {
                   objectFit: "cover",
                   objectPosition: "center left",
                   display: "block",
+                  filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.26))",
                 }}
               />
               <div
