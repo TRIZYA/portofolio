@@ -166,7 +166,6 @@ export default function Home() {
                   objectFit: "cover",
                   objectPosition: "center left",
                   display: "block",
-                  filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.26))",
                 }}
               />
               <div

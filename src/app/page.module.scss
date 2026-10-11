@@ -1,7 +1,9 @@
 .heroRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 540px);
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 1320px;
 }
 
 .heroCopy {
@@ -39,8 +41,10 @@
 
 @media (max-width: 768px) {
   .heroRow {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    grid-template-columns: none;
   }
 
   .heroCopy {
