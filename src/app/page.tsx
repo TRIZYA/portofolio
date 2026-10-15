@@ -148,9 +148,9 @@ export default function Home() {
           className={styles.heroCopy}
           style={{
             minWidth: 0,
-            width: "100%",
+            width: "min(100%, 620px)",
             maxWidth: 620,
-            flex: "1 1 0",
+            flex: "0 1 620px",
           }}
         >
           {home.featured.display && (
