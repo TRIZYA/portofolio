@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -108,8 +109,12 @@
 
   .heroPortraitWrap {
     order: 2 !important;
-    margin-top: 0 !important;
+    margin: 0 auto !important;
     width: 100% !important;
+    max-width: 360px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .heroCopy > * {
@@ -136,11 +141,13 @@
   }
 
   .heroPortrait {
-    margin-left: 0 !important;
+    display: block !important;
+    margin: 0 auto !important;
     width: min(100%, 360px) !important;
     max-width: 360px !important;
     min-width: 0 !important;
     height: auto !important;
     aspect-ratio: 23 / 28 !important;
+    border-radius: 28px !important;
   }
 }
