@@ -49,7 +49,7 @@ export default function Home() {
         className={styles.heroRow}
         style={{
           width: "100%",
-          maxWidth: "1200px",
+          maxWidth: "1320px",
           margin: "0 auto",
           padding: "0 20px",
           boxSizing: "border-box",
@@ -93,9 +93,8 @@ export default function Home() {
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
-                width: "460px",
+                width: "100%",
                 maxWidth: "460px",
-                flex: "0 0 460px",
                 justifySelf: "start",
                 order: 2,
               }}
@@ -104,15 +103,14 @@ export default function Home() {
                 className={styles.heroPortrait}
                 style={{
                   position: "relative",
-                  width: "460px",
+                  width: "100%",
                   maxWidth: "460px",
-                  minWidth: 0,
-                  height: "560px",
+                  height: "auto",
+                  aspectRatio: "23 / 28",
                   overflow: "hidden",
                   borderRadius: "28px",
                   marginLeft: 0,
                   marginRight: "18px",
-                  flex: "0 0 460px",
                 }}
               >
                 <img
@@ -150,10 +148,9 @@ export default function Home() {
           className={styles.heroCopy}
           style={{
             minWidth: 0,
-            width: "620px",
-            maxWidth: "620px",
-            flex: "0 0 620px",
-            flexShrink: 0,
+            width: "100%",
+            maxWidth: 620,
+            flex: "1 1 0",
           }}
         >
           {home.featured.display && (
