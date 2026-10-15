@@ -115,6 +115,7 @@
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    transform: translateX(-8px) !important;
   }
 
   .heroCopy > * {
@@ -149,5 +150,6 @@
     height: auto !important;
     aspect-ratio: 23 / 28 !important;
     border-radius: 28px !important;
+    transform: translateX(-2px) !important;
   }
 }
