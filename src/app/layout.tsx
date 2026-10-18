@@ -16,15 +16,24 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
+
 export async function generateMetadata() {
-  return Meta.generate({
+  const metadata = await Meta.generate({
     title: home.title,
     description: home.description,
     baseURL: baseURL,
     path: home.path,
     image: home.image,
   });
+
+  return {
+    ...metadata,
+    verification: {
+      google:"Q51YEQ9zy8GMwg1wOcQIjL9PM2EqwnXbbml_ogmQ6-4",
+    },
+  };
 }
+
 
 export default async function RootLayout({
   children,
