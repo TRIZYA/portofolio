@@ -254,7 +254,7 @@ const about: About = {
         images: [],
       },
       {
-        title: "MySQL & MongoDB",
+        title: "MySQL, PostgreSQL ,Firebase, & MongoDB",
         description: (
           <>Perancangan dan implementasi arsitektur database ganda menggunakan MySQL untuk data relasional yang terstruktur dengan kepatuhan ACID, serta MongoDB untuk pengelolaan data dinamis berbasis dokumen yang memiliki skalabilitas tinggi.</>
         ),
@@ -262,6 +262,14 @@ const about: About = {
           {
             name: "MySQL",
             icon: "mysql",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+          },
+          {
+            name: "Firebase",
+            icon: "firebase",
           },
           {
             name: "MongoDB",
@@ -288,8 +296,8 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Uraian dan ungkapan singkat yang ditulis oleh dimas tentang teknologi: ruang hangat yang merajut masa depan lewat keajaiban inovasi.",
+  description: `Baca apa yang sedang ditekuni oleh ${person.name} belakangan ini`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };

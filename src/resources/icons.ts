@@ -22,6 +22,7 @@ import {
   PiBookBookmarkDuotone,
   PiMedalDuotone,
   PiGraduationCapDuotone,
+  PiBrowsersDuotone,
 } from "react-icons/pi";
 
 import {
@@ -29,6 +30,16 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiJava,
+  SiKotlin,
+  SiDart,
+  SiFlutter,
+  SiMysql,
+  SiPostgresql,
+  SiFirebase,
+  SiMongodb,
+  SiCoreldraw,
+  SiAdobephotoshop,
 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
@@ -62,6 +73,17 @@ export const iconLibrary: Record<string, IconType> = {
   nextjs: SiNextdotjs,
   supabase: SiSupabase,
   figma: SiFigma,
+  uiux: PiBrowsersDuotone,
+  java: SiJava,
+  kotlin: SiKotlin,
+  dart: SiDart,
+  flutter: SiFlutter,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  firebase: SiFirebase,
+  mongodb: SiMongodb,
+  coreldraw: SiCoreldraw,
+  photoshop: SiAdobephotoshop,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
