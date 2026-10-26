@@ -48,6 +48,12 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
+  {
+    name: "Download CV",
+    icon: "download",
+    link: "/cv/cv-dimas-achyar-t.pdf",
+    essential: true,
+  },
 ];
 
 const home: Home = {
