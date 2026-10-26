@@ -248,6 +248,8 @@ export interface Achievement extends BasePageConfig {
     external?: boolean;
     /** Caption text to display below the image */
     caption?: string;
+    /** Optional destination for a view link displayed over the image */
+    viewUrl?: string;
   }>;
   /** List of achievement certificates */
   achievements?: Array<{
@@ -261,6 +263,8 @@ export interface Achievement extends BasePageConfig {
     external?: boolean;
     /** Caption text to display below the image */
     caption?: string;
+    /** Optional destination for a view link displayed over the image */
+    viewUrl?: string;
   }>;
   /** Backward compatible list of certificates */
   images?: Array<{
@@ -274,6 +278,8 @@ export interface Achievement extends BasePageConfig {
     external?: boolean;
     /** Caption text to display below the image */
     caption?: string;
+    /** Optional destination for a view link displayed over the image */
+    viewUrl?: string;
   }>;
   /** Explicit grouped achievement sections */
   sections?: {
@@ -283,6 +289,7 @@ export interface Achievement extends BasePageConfig {
       orientation: string;
       external?: boolean;
       caption?: string;
+      viewUrl?: string;
     }>;
     suratKeputusan?: Array<{
       src: string;
@@ -290,6 +297,7 @@ export interface Achievement extends BasePageConfig {
       orientation: string;
       external?: boolean;
       caption?: string;
+      viewUrl?: string;
     }>;
     ujiKompetensi?: Array<{
       src: string;
@@ -297,6 +305,15 @@ export interface Achievement extends BasePageConfig {
       orientation: string;
       external?: boolean;
       caption?: string;
+      viewUrl?: string;
+    }>;
+    paper?: Array<{
+      src: string;
+      alt: string;
+      orientation: string;
+      external?: boolean;
+      caption?: string;
+      viewUrl?: string;
     }>;
   };
 }

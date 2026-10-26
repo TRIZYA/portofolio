@@ -31,7 +31,7 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
             src.includes("drive.google.com/uc") ||
             src.includes("drive.usercontent.google.com") ||
             src.includes("googleusercontent.com");
-          const viewUrl = toDriveViewUrl(image.src);
+          const viewUrl = image.viewUrl ?? toDriveViewUrl(image.src);
 
           return (
             <div
@@ -150,6 +150,7 @@ export default function AchievementView({ type = "all" }: AchievementViewProps) 
     sertifikat: achievement.achievements ?? [],
     suratKeputusan: [],
     ujiKompetensi: [],
+    paper: [],
   };
 
   if (type === "training") {
@@ -162,6 +163,7 @@ export default function AchievementView({ type = "all" }: AchievementViewProps) 
         {renderGallery("Sertifikat", achievementSections.sertifikat ?? [])}
         {renderGallery("Surat Keputusan", achievementSections.suratKeputusan ?? [])}
         {renderGallery("Uji Kompetensi", achievementSections.ujiKompetensi ?? [])}
+        {renderGallery("Publikasi", achievementSections.paper ?? [])}
       </div>
     );
   }
@@ -172,6 +174,7 @@ export default function AchievementView({ type = "all" }: AchievementViewProps) 
       {renderGallery("Sertifikat", achievementSections.sertifikat ?? [])}
       {renderGallery("Surat Keputusan", achievementSections.suratKeputusan ?? [])}
       {renderGallery("Uji Kompetensi", achievementSections.ujiKompetensi ?? [])}
+      {renderGallery("Publikasi", achievementSections.paper ?? [])}
     </div>
   );
 }

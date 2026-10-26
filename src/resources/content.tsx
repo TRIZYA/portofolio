@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Dimas",
   lastName: "Achyar Trizyaputra",
   name: `Dimas Achyar Trizyaputra`,
-  role: "Software Engineer, Web Developer, Data Analyst",
+  role: "Junior Software Developer, Web Developer, Data Analyst",
   avatar: "/images/avatar.webp",
   email: "achyartrizyaputra@gmail.com",
   location: "Asia/Jakarta", // valid IANA timezone used for clock/time display
@@ -104,7 +104,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.firstName} adalah seorang software engineer, web developer, dan data analyst. Memiliki ketertarikan pada pengembangan software, website, 
+        {person.firstName} adalah seorang junior software developer, web developer, dan data analyst. Memiliki ketertarikan pada pengembangan software, website, 
         serta pengolahan dan analisis data untuk membantu menyelesaikan berbagai kebutuhan dan permasalahan secara sederhana dan efektif. &nbsp; 
         {person.firstName} juga tertarik pada bagaimana teknologi dapat digunakan untuk membangun solusi yang fungsional, mudah digunakan, dan sesuai dengan kebutuhan.
       </>
@@ -342,10 +342,21 @@ const ujiKompetensiAchievementCertificates: Achievement["achievements"] = [
   { src: toDriveImage("1S8eBT-NSUSjf7u-RGeYwbCby32zzXttd"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat EPT Toefl DSP2BU UMG" },
 ];
 
+const paperCertificates: NonNullable<Achievement["achievements"]> = [
+  {
+    src: "/images/paper/implementasi-rtsp.jpg",
+    alt: "Halaman pertama paper implementasi RTSP untuk monitoring live view CCTV",
+    orientation: "vertical",
+    caption: "IMPLEMENTASI RTSP SEBAGAI MONITORING LIVE VIEW CCTV BERBASIS IP CAMERA",
+    viewUrl: "https://jurnal.mediaakademik.com/index.php/jma/article/view/4515",
+  },
+];
+
 const achievementCertificates: Achievement["achievements"] = [
   ...sertifikatAchievementCertificates,
   ...suratKeputusanAchievementCertificates,
   ...ujiKompetensiAchievementCertificates,
+  ...paperCertificates,
 ];
 
 const training: Achievement = {
@@ -370,6 +381,7 @@ const achievement: Achievement = {
     sertifikat: sertifikatAchievementCertificates,
     suratKeputusan: suratKeputusanAchievementCertificates,
     ujiKompetensi: ujiKompetensiAchievementCertificates,
+    paper: paperCertificates,
   },
 };
 
