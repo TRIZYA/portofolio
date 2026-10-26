@@ -146,20 +146,32 @@ const renderGallery = (title: string, items: typeof achievement.training) => {
 
 export default function AchievementView({ type = "all" }: AchievementViewProps) {
   const trainingItems = training.training ?? [];
-  const achievementItems = achievement.achievements ?? [];
+  const achievementSections = achievement.sections ?? {
+    sertifikat: achievement.achievements ?? [],
+    suratKeputusan: [],
+    ujiKompetensi: [],
+  };
 
   if (type === "training") {
     return <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>{renderGallery("Pelatihan", trainingItems)}</div>;
   }
 
   if (type === "achievement") {
-    return <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>{renderGallery("Pencapaian", achievementItems)}</div>;
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+        {renderGallery("Sertifikat", achievementSections.sertifikat ?? [])}
+        {renderGallery("Surat Keputusan", achievementSections.suratKeputusan ?? [])}
+        {renderGallery("Uji Kompetensi", achievementSections.ujiKompetensi ?? [])}
+      </div>
+    );
   }
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
       {renderGallery("Pelatihan", trainingItems)}
-      {renderGallery("Pencapaian", achievementItems)}
+      {renderGallery("Sertifikat", achievementSections.sertifikat ?? [])}
+      {renderGallery("Surat Keputusan", achievementSections.suratKeputusan ?? [])}
+      {renderGallery("Uji Kompetensi", achievementSections.ujiKompetensi ?? [])}
     </div>
   );
 }

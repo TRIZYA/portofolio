@@ -275,4 +275,28 @@ export interface Achievement extends BasePageConfig {
     /** Caption text to display below the image */
     caption?: string;
   }>;
+  /** Explicit grouped achievement sections */
+  sections?: {
+    sertifikat?: Array<{
+      src: string;
+      alt: string;
+      orientation: string;
+      external?: boolean;
+      caption?: string;
+    }>;
+    suratKeputusan?: Array<{
+      src: string;
+      alt: string;
+      orientation: string;
+      external?: boolean;
+      caption?: string;
+    }>;
+    ujiKompetensi?: Array<{
+      src: string;
+      alt: string;
+      orientation: string;
+      external?: boolean;
+      caption?: string;
+    }>;
+  };
 }

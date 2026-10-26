@@ -317,17 +317,29 @@ const trainingCertificates: Achievement["training"] = [
   { src: toDriveImage("17ZTevnJwqlSR9RwsHGpiu2OO671-J0rR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Atas Partisipasi Aktif PMKS MPK SMKN 1 Lamongan" },
 ];
 
-const achievementCertificates: Achievement["achievements"] = [
-  { src: toDriveImage("1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
+const sertifikatAchievementCertificates: Achievement["achievements"] = [
   { src: toDriveImage("1DRNdyprhLU6iCMjcxbA7cfYWbmsgCLfR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Panitia Mataf 2024" },
-  { src: toDriveImage("1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
-  { src: toDriveImage("1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
   { src: toDriveImage("1ntCkgWAC_LAD6QRFHaHlMkxHJaEfWBan"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Sebagai Peserta Uberalez 2022" },
   { src: toDriveImage("1QLoJtVy4-OLjm2W2_JkdjzM4it4tTxqR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Pesantren Kilat Baitul Arqom" },
   { src: toDriveImage("10nWf-Y5UCaxnuqBwLqDAApsReGnijYQj"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Mataf UMG 2022" },
+  { src: toDriveImage("1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv"), alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
+];
+
+const suratKeputusanAchievementCertificates: Achievement["achievements"] = [
+  { src: toDriveImage("1whFdaWr_y2Ix0-De26G8ndBbolzXNopJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengangkatan Panitia Mataf 2023" },
+  { src: toDriveImage("1Urg0B8693-XkRaTOqt3qEcUSNq-neOmJ"), alt: "image", orientation: "vertical", external: true, caption: "SK Rektor Pengesahan Pimpinan Komisariat Teknokrat IMM Universitas Muhammadiyah Gresik" },
+];
+
+const ujiKompetensiAchievementCertificates: Achievement["achievements"] = [
+  { src: toDriveImage("1Kkgz9lGSryTjcx2KrjwhtvQqhY7GhnAl"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Kompetensi UKK Multimedia Pengolahan Audio dan Video" },
   { src: toDriveImage("15GeMhk_zznbQjsqcK_tAD8Pg3QqHX0PM"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat D1 Bahasa Inggris DSP2BU UMG" },
   { src: toDriveImage("1S8eBT-NSUSjf7u-RGeYwbCby32zzXttd"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat EPT Toefl DSP2BU UMG" },
-  { src: toDriveImage("1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv"), alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
+];
+
+const achievementCertificates: Achievement["achievements"] = [
+  ...sertifikatAchievementCertificates,
+  ...suratKeputusanAchievementCertificates,
+  ...ujiKompetensiAchievementCertificates,
 ];
 
 const training: Achievement = {
@@ -348,6 +360,11 @@ const achievement: Achievement = {
   training: [],
   achievements: achievementCertificates,
   images: achievementCertificates,
+  sections: {
+    sertifikat: sertifikatAchievementCertificates,
+    suratKeputusan: suratKeputusanAchievementCertificates,
+    ujiKompetensi: ujiKompetensiAchievementCertificates,
+  },
 };
 
 export { person, social, newsletter, home, about, blog, work, achievement, training };
