@@ -27,6 +27,9 @@ import {
 
 import {
   SiJavascript,
+  SiReact,
+  SiVite,
+  SiNodedotjs,
   SiNextdotjs,
   SiFigma,
   SiSupabase,
@@ -69,6 +72,9 @@ export const iconLibrary: Record<string, IconType> = {
   download: HiArrowDownTray,
   rocket: HiOutlineRocketLaunch,
   javascript: SiJavascript,
+  react: SiReact,
+  vite: SiVite,
+  nodejs: SiNodedotjs,
   nextjs: SiNextdotjs,
   supabase: SiSupabase,
   figma: SiFigma,

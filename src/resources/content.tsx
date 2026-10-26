@@ -254,9 +254,9 @@ const about: About = {
         images: [],
       },
       {
-        title: "MySQL, PostgreSQL ,Firebase, & MongoDB",
+        title: "MySQL, PostgreSQL, Firebase & MongoDB",
         description: (
-          <>Perancangan dan implementasi arsitektur database ganda menggunakan MySQL untuk data relasional yang terstruktur dengan kepatuhan ACID, serta MongoDB untuk pengelolaan data dinamis berbasis dokumen yang memiliki skalabilitas tinggi.</>
+          <>Mengelola data aplikasi menggunakan MySQL dan PostgreSQL untuk basis data relasional, Firebase untuk layanan backend terkelola, serta MongoDB untuk penyimpanan berbasis dokumen. Pemilihan teknologi disesuaikan dengan struktur data dan kebutuhan aplikasi.</>
         ),
         tags: [
           {
