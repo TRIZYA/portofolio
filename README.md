@@ -137,6 +137,10 @@ npm run start
 - API route untuk OG image dan RSS tersedia di folder `src/app/api`.
 - Untuk kebutuhan SEO dan preview sosial media, pastikan metadata seperti title, description, dan image pada content sudah sesuai.
 
+## Atribusi
+
+Project ini menggunakan [Magic Portfolio](https://once-ui.com/products/magic-portfolio) dari [Once UI](https://once-ui.com/), dengan Selene Yu sebagai developer. Template telah disesuaikan untuk kebutuhan portofolio Dimas Achyar Trizyaputra.
+
 ## Lisensi
 
 Project ini menggunakan lisensi yang tertera di file LICENSE.
