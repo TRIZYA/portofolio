@@ -54,8 +54,8 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: `Portfolio ${person.name}`,
+  description: `Hi, I'm ${person.name}, a ${person.role} from ${person.locationLabel ?? person.location}.`,
   headline: <>Halo, Saya Dimas Achyar Trizyaputra.</>,
   featured: {
     display: true,

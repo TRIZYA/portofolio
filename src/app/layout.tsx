@@ -28,6 +28,11 @@ export async function generateMetadata() {
 
   return {
     ...metadata,
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.ico",
+    },
     verification: {
       google:"Q51YEQ9zy8GMwg1wOcQIjL9PM2EqwnXbbml_ogmQ6-4",
     },
