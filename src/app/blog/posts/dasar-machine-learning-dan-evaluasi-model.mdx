@@ -1,0 +1,40 @@
+---
+title: "Dasar Machine Learning: Dari Data hingga Evaluasi Model"
+summary: "Memahami tahapan proyek machine learning, mulai dari menentukan masalah dan menyiapkan data hingga mengukur kinerja model."
+publishedAt: "2026-10-27"
+tag: "AI & Data"
+---
+
+Machine learning memungkinkan komputer menemukan pola dari data untuk membantu membuat prediksi atau mengelompokkan informasi. Namun, membangun model bukan hanya soal memilih algoritma. Hasil yang berguna bergantung pada masalah yang jelas, data yang sesuai, dan evaluasi yang tepat.
+
+## Mulai dari pertanyaan
+
+Sebelum memilih model, tentukan keputusan apa yang ingin dibantu. Apakah kita ingin memprediksi nilai penjualan, mengelompokkan email spam, atau memperkirakan pelanggan yang berisiko berhenti berlangganan? Tujuan ini menentukan data yang dibutuhkan dan cara mengukur keberhasilan.
+
+Dalam dataset, **fitur** adalah informasi yang digunakan model sebagai masukan. **Target** adalah nilai yang ingin diprediksi. Untuk klasifikasi spam, fitur dapat berupa karakteristik pesan, sedangkan targetnya adalah kategori spam atau bukan spam.
+
+## Siapkan dan pisahkan data
+
+Periksa nilai kosong, duplikasi, format yang tidak konsisten, dan label yang keliru. Tahap ini sering membutuhkan lebih banyak perhatian daripada proses melatih model.
+
+Data biasanya dibagi menjadi data latih dan data uji. Model belajar dari data latih, lalu performanya diperiksa pada data uji yang belum pernah digunakan selama pelatihan. Pemisahan ini membantu memberi gambaran tentang kemampuan model menghadapi data baru.
+
+Pastikan tidak terjadi *data leakage*: informasi yang hanya tersedia setelah kejadian diprediksi jangan sampai masuk ke fitur. Kebocoran data dapat membuat hasil evaluasi terlihat bagus, tetapi gagal mencerminkan penggunaan sebenarnya.
+
+## Pilih metrik yang sesuai
+
+Metrik harus mengikuti jenis masalah dan dampak kesalahan:
+
+- Untuk klasifikasi, **precision** menunjukkan seberapa banyak prediksi positif yang benar, sedangkan **recall** menunjukkan seberapa banyak kasus positif yang berhasil ditemukan.
+- **Accuracy** mengukur proporsi prediksi yang benar, tetapi bisa menyesatkan jika jumlah kategori sangat tidak seimbang.
+- Untuk prediksi angka, **MAE** mengukur rata-rata selisih absolut antara prediksi dan nilai sebenarnya.
+
+Bandingkan model dengan baseline sederhana. Jika model yang lebih rumit tidak memberi peningkatan yang berarti, solusi yang lebih sederhana mungkin lebih mudah dipahami dan dirawat.
+
+## Evaluasi bukan akhir pekerjaan
+
+Setelah model diuji, periksa kesalahan yang dibuat dan kelompok data yang paling terdampak. Hasil evaluasi perlu dibaca bersama konteks masalah, bukan hanya sebagai satu angka. Jika model digunakan dalam aplikasi, kinerjanya juga perlu dipantau karena pola data dapat berubah dari waktu ke waktu.
+
+## Kesimpulan
+
+Alur machine learning yang baik dimulai dengan pertanyaan yang tepat, dilanjutkan dengan pemeriksaan data, pemisahan yang benar, dan evaluasi yang sesuai. Bagi data analyst, pemahaman proses ini penting agar hasil model dapat dijelaskan dan digunakan secara bertanggung jawab.

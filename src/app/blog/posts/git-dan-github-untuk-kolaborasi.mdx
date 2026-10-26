@@ -1,0 +1,56 @@
+---
+title: "Dasar Git dan GitHub untuk Kolaborasi Developer"
+summary: "Alur sederhana menggunakan Git untuk menyimpan perubahan kode dan GitHub untuk berbagi pekerjaan serta melakukan code review."
+publishedAt: "2026-10-27"
+tag: "Software Development"
+---
+
+Saat mengembangkan aplikasi, perubahan kode perlu dicatat dengan rapi. Git membantu menyimpan riwayat perubahan di komputer, sedangkan GitHub menyediakan layanan untuk menyimpan repository secara daring dan berkolaborasi dengan developer lain.
+
+## Memahami alur dasar Git
+
+Satu perubahan biasanya melewati tiga tahap: file diubah, perubahan dipilih untuk disimpan, lalu dibuat menjadi commit. Perintah berikut membantu melihat dan menyimpan perubahan:
+
+```bash
+git status
+git add src/components/ProjectCard.tsx
+git commit -m "Add project card layout"
+```
+
+`git status` menunjukkan kondisi file. `git add` memilih perubahan yang akan dimasukkan ke commit, sementara `git commit` menyimpan snapshot perubahan beserta pesannya.
+
+Pesan commit sebaiknya menjelaskan perubahan secara spesifik. Pesan seperti `Fix project card spacing` lebih mudah dipahami daripada `Update` atau `Changes`.
+
+## Bekerja menggunakan branch
+
+Branch memungkinkan fitur dikembangkan tanpa langsung mengubah branch utama. Contoh membuat branch untuk fitur baru:
+
+```bash
+git switch -c feat/project-filter
+```
+
+Setelah perubahan selesai dan di-commit, branch dapat dikirim ke GitHub:
+
+```bash
+git push -u origin feat/project-filter
+```
+
+Di GitHub, perubahan dapat diajukan melalui pull request. Pull request memberi ruang bagi tim untuk membaca kode, memberi masukan, dan memastikan perubahan sesuai tujuan sebelum digabungkan.
+
+## Jika terjadi konflik
+
+Konflik muncul ketika beberapa perubahan menyentuh bagian kode yang sama. Baca penanda konflik di file, tentukan isi akhir yang benar, lalu hapus penanda tersebut. Setelah itu, uji perubahan dan buat commit penyelesaian konflik.
+
+Hindari menyelesaikan konflik dengan memilih satu versi secara otomatis tanpa memeriksa isinya. Perubahan dari kedua branch mungkin sama-sama penting.
+
+## Kebiasaan kolaborasi yang membantu
+
+- Buat branch terpisah untuk fitur atau perbaikan yang berbeda.
+- Usahakan commit tetap kecil dan fokus pada satu tujuan.
+- Tulis ringkasan pull request yang menjelaskan perubahan dan cara mengujinya.
+- Tinjau diff sebelum push agar file yang tidak terkait tidak ikut terkirim.
+- Jangan memasukkan password, token, atau file rahasia ke repository.
+
+## Kesimpulan
+
+Git membantu developer memahami dan mengelola riwayat kode, sedangkan GitHub memudahkan kerja bersama melalui branch dan pull request. Menguasai alur dasar ini membuat perubahan lebih mudah ditinjau, dilacak, dan dipelihara.

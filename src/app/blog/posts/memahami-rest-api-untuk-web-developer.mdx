@@ -1,0 +1,52 @@
+---
+title: "Memahami REST API untuk Pengembangan Web"
+summary: "Mengenal resource, HTTP methods, status code, dan cara frontend berkomunikasi dengan backend melalui REST API."
+publishedAt: "2026-10-27"
+tag: "Web Development"
+---
+
+Website modern biasanya memisahkan antarmuka dari proses pengolahan data. Frontend menampilkan informasi dan menerima interaksi pengguna, sedangkan backend mengelola data serta aturan aplikasi. REST API menjadi salah satu cara umum bagi keduanya untuk berkomunikasi melalui HTTP.
+
+## Apa itu REST API?
+
+REST API menyediakan akses ke resource melalui URL. Resource dapat berupa pengguna, artikel, atau proyek. Contohnya, `/api/projects` dapat mewakili koleksi proyek, sementara `/api/projects/42` menunjuk satu proyek.
+
+Klien mengirim request ke endpoint, lalu server mengembalikan response. Data response sering menggunakan format JSON karena mudah diproses oleh berbagai bahasa pemrograman.
+
+## HTTP methods yang sering digunakan
+
+- **GET** untuk membaca resource.
+- **POST** untuk membuat resource baru.
+- **PUT** untuk mengganti seluruh data resource.
+- **PATCH** untuk memperbarui sebagian data.
+- **DELETE** untuk menghapus resource.
+
+Method memberi petunjuk tentang tujuan request. Misalnya, `GET /api/projects` digunakan untuk mengambil daftar proyek, sedangkan `POST /api/projects` mengirim data proyek baru.
+
+## Mengambil data dari frontend
+
+Browser menyediakan `fetch` untuk mengirim request HTTP. Contoh berikut mengambil daftar proyek dalam format JSON:
+
+```javascript
+async function getProjects() {
+  const response = await fetch("/api/projects");
+
+  if (!response.ok) {
+    throw new Error(`Request gagal: ${response.status}`);
+  }
+
+  return response.json();
+}
+```
+
+Pemeriksaan `response.ok` penting karena request yang gagal tidak selalu membuat `fetch` melempar error secara otomatis. Status HTTP seperti `200`, `201`, `400`, `401`, `404`, dan `500` membantu menjelaskan hasil request.
+
+## Hal yang perlu diperhatikan
+
+Jangan menganggap semua request berhasil atau semua response memiliki bentuk yang sama. Tangani error, validasi data dari pengguna, dan tampilkan pesan yang mudah dipahami. Untuk endpoint yang membutuhkan autentikasi, pastikan token dan informasi sensitif tidak ditanamkan di kode frontend yang dapat diakses publik.
+
+REST API juga perlu dirancang konsisten. Gunakan nama resource yang jelas, pilih HTTP method sesuai tindakan, dan dokumentasikan bentuk request serta response agar lebih mudah digunakan oleh anggota tim lain.
+
+## Kesimpulan
+
+Memahami REST API membantu web developer menghubungkan antarmuka dengan data aplikasi secara terstruktur. Mulailah dengan memahami endpoint, HTTP methods, response JSON, dan status code. Setelah itu, praktikkan penanganan error serta validasi pada proyek kecil.
