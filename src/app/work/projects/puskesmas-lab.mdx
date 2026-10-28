@@ -1,0 +1,47 @@
+---
+title: "Aplikasi Laboratorium Puskesmas: Registrasi Pasien hingga Validasi Hasil"
+publishedAt: "2026-10-27"
+summary: "Aplikasi web untuk mengelola data pasien, order pemeriksaan, hasil laboratorium, dan validasi dokter dengan React, Express, serta PostgreSQL."
+images:
+  - "/images/projects/puskesmas-lab/up1.png"
+  - "/images/projects/puskesmas-lab/up2.png"
+  - "/images/projects/puskesmas-lab/up3.png"
+team:
+  - name: "Dimas Achyar Trizyaputra"
+    role: "Software Engineer, Web Developer, Data Analyst"
+    avatar: "/images/avatar.webp"
+    linkedIn: "https://www.linkedin.com/in/dimas-achyar-trizyaputra"
+---
+
+## Overview
+
+Aplikasi web untuk mendigitalisasi alur kerja laboratorium puskesmas, mulai dari registrasi pasien dan pembuatan order pemeriksaan hingga input hasil, validasi dokter, dan penyimpanan rekam medis. Proyek ini dibangun sebagai prototype / MVP dengan frontend React dan Vite, backend Express, serta database PostgreSQL.
+
+Sistem menyediakan akses berdasarkan peran admin, analis laboratorium, dan dokter. Analis dapat mengelola data pasien, membuat order, dan memasukkan hasil; dokter dapat meninjau hasil serta memberi catatan dan keputusan validasi. Dashboard menampilkan ringkasan operasional dan analytics agregat tanpa mengirim nama, NIK, atau detail pasien.
+
+## Key Features
+
+- **Akses Berbasis Peran**: Memisahkan akses admin, analis, dan dokter, dengan autentikasi JWT serta password yang di-hash menggunakan bcrypt.
+- **Manajemen Data Master**: Mengelola pengguna, kategori pemeriksaan, parameter tes, serta rentang rujukan.
+- **Registrasi dan Order Pemeriksaan**: Menyimpan data pasien dan menghubungkannya dengan pemeriksaan laboratorium.
+- **Input Hasil dan Penanda Abnormal**: Menyimpan hasil per parameter dan menandai nilai di luar rentang rujukan berdasarkan jenis kelamin.
+- **Validasi Dokter**: Mendukung peninjauan hasil, catatan klinis, serta keputusan selesai atau perlu revisi.
+- **Dashboard Operasional**: Menampilkan KPI, tren pemeriksaan 14 hari, status, dan kategori pemeriksaan 30 hari.
+- **Profil dan Notifikasi**: Memungkinkan pengguna mengubah profil serta menerima notifikasi terkait transisi hasil ke validasi atau revisi.
+
+## Technologies Used
+
+- **React dan Vite**: Membangun antarmuka web dan pengalaman pengembangan frontend.
+- **Node.js dan Express**: Menyediakan backend REST untuk autentikasi dan pengelolaan data.
+- **PostgreSQL**: Menyimpan data pasien, data master, pemeriksaan, dan hasil laboratorium.
+- **JWT dan bcrypt**: Mendukung autentikasi serta penyimpanan password secara ter-hash.
+
+## Challenges and Learnings
+
+Tantangan utama proyek ini adalah menghubungkan setiap peran ke alur yang sama tanpa kehilangan konteks pemeriksaan. Data pasien, order, hasil per parameter, dan keputusan dokter perlu saling terhubung, sementara penanda abnormal harus mengikuti rentang rujukan yang sesuai.
+
+Proyek ini juga menekankan pentingnya membatasi data yang ditampilkan pada analytics, menjaga pembagian akses, dan mencatat perubahan yang berdampak pada rekam medis. Audit log, ekspor PDF, pencarian dan pagination, serta pengujian end-to-end masih menjadi pekerjaan lanjutan sebelum aplikasi siap digunakan secara operasional.
+
+## Outcome
+
+Prototype ini menyediakan fondasi workflow laboratorium dari registrasi pasien sampai validasi dokter, beserta dashboard untuk memantau aktivitas pemeriksaan. Implementasi berikutnya berfokus pada traceability melalui audit log, laporan yang dapat diekspor, dan pengujian alur secara menyeluruh sebelum penggunaan operasional.
