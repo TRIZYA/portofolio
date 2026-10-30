@@ -32,7 +32,7 @@ export const Footer = () => {
                 item.link.endsWith(".pdf") ? (
                   <a
                     key={item.name}
-                    className={styles.cvIconButton}
+                    className={`${styles.cvIconButton} radius-m button cursor-interactive`}
                     href={item.link}
                     download
                     aria-label={item.name}

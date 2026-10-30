@@ -23,28 +23,48 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    user-select: none;
+    padding: 0;
+    white-space: nowrap;
     color: var(--neutral-on-background-strong);
     text-decoration: none;
-    background: var(--static-transparent);
-    border: 1px solid var(--neutral-alpha-weak);
+    -webkit-tap-highlight-color: transparent;
     transition: var(--transition-micro-medium);
+
+    &:hover,
+    &:focus {
+        z-index: 1;
+    }
 }
 
 .cvButton {
     gap: var(--static-space-4);
+    min-height: var(--static-space-32);
     height: var(--static-space-32);
-    padding: 0 var(--static-space-8);
-    border-radius: var(--radius-m);
-    font: inherit;
+    padding: var(--static-space-4) var(--static-space-8);
+    box-shadow: inset 0 var(--solid-inset-distance) var(--solid-inset-size) var(--solid-inset-color-neutral);
+    border: 1px solid var(--neutral-alpha-weak);
+    background: var(--static-transparent);
+
+    &:hover {
+        background: var(--neutral-alpha-weak);
+        border-color: var(--neutral-alpha-weak);
+    }
 }
 
 .cvIconButton {
+    min-width: var(--static-space-40);
+    min-height: var(--static-space-40);
+    flex-shrink: 0;
     width: var(--static-space-40);
     height: var(--static-space-40);
-    border-radius: var(--radius-l);
-}
+    box-shadow: inset 0 var(--solid-inset-distance) var(--solid-inset-size) var(--solid-inset-color-neutral);
+    border: 1px solid var(--neutral-alpha-weak);
+    background: var(--static-transparent);
 
-.cvButton:hover,
-.cvIconButton:hover {
-    background: var(--neutral-alpha-weak);
+    &:hover {
+        background: var(--neutral-alpha-weak);
+        border-color: var(--neutral-alpha-weak);
+    }
 }

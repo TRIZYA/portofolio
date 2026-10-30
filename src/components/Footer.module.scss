@@ -10,8 +10,12 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        min-width: var(--static-space-24);
+        min-height: var(--static-space-24);
         width: var(--static-space-24);
         height: var(--static-space-24);
+        border: none;
+        background: var(--static-transparent);
         color: var(--neutral-on-background-medium);
         text-decoration: none;
         transition: var(--transition-micro-medium);

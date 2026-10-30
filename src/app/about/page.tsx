@@ -147,7 +147,11 @@ export default function About() {
                       <React.Fragment key={item.name}>
                         <Row s={{ hide: true }}>
                           {item.link.endsWith(".pdf") ? (
-                            <a className={styles.cvButton} href={item.link} download>
+                            <a
+                              className={`${styles.cvButton} radius-m button cursor-interactive`}
+                              href={item.link}
+                              download
+                            >
                               <Icon name={item.icon} size="xs" />
                               {item.name}
                             </a>
@@ -165,7 +169,7 @@ export default function About() {
                         <Row hide s={{ hide: false }}>
                           {item.link.endsWith(".pdf") ? (
                             <a
-                              className={styles.cvIconButton}
+                              className={`${styles.cvIconButton} radius-l button cursor-interactive`}
                               href={item.link}
                               download
                               aria-label={item.name}
