@@ -1,0 +1,86 @@
+---
+title: "Daftar Tools Gratis untuk Testing Website"
+summary: "Pilihan tool untuk menguji performa, keamanan, tampilan responsif, SEO, dan kualitas HTML website beserta kegunaan masing-masing."
+publishedAt: "2026-10-30"
+tag: "Web Development"
+---
+
+Sebuah website perlu diuji dari beberapa sisi, bukan hanya apakah halaman berhasil dibuka. Performa, keamanan koneksi, tampilan di perangkat berbeda, dan kualitas HTML juga memengaruhi pengalaman pengunjung.
+
+Berikut beberapa tools yang bisa digunakan untuk memeriksa website. Ketersediaan fitur gratis dapat berubah, jadi periksa ketentuan terbaru dari masing-masing layanan.
+
+## Menguji performa halaman
+
+### Google PageSpeed Insights
+
+[PageSpeed Insights](https://pagespeed.web.dev/) mengukur performa halaman pada perangkat mobile dan desktop. Laporannya mencakup metrik seperti Core Web Vitals serta saran untuk hal-hal yang mungkin memperlambat halaman.
+
+Gunakan laporan ini untuk menemukan area yang perlu diperiksa. Skor bukan tujuan akhir: utamakan dampak pada pengalaman pengguna dan metrik yang memang bermasalah.
+
+### GTmetrix
+
+[GTmetrix](https://gtmetrix.com/) menyediakan ringkasan performa, struktur halaman, dan waterfall yang menunjukkan urutan pemuatan request. Waterfall membantu menemukan gambar, stylesheet, atau script yang memerlukan waktu lama.
+
+### WebPageTest
+
+[WebPageTest](https://www.webpagetest.org/) cocok untuk pengujian lebih terperinci. Kita dapat memilih lokasi pengujian, browser, dan simulasi koneksi untuk melihat bagaimana kondisi jaringan memengaruhi waktu muat.
+
+### Pingdom Website Speed Test
+
+[Pingdom Website Speed Test](https://tools.pingdom.com/) memberi pemeriksaan cepat terhadap waktu muat, ukuran halaman, dan jumlah request. Hasilnya berguna sebagai gambaran awal, lalu bisa ditelusuri lebih jauh dengan waterfall dari tool lain.
+
+## Memeriksa keamanan dasar
+
+### Sucuri SiteCheck
+
+[Sucuri SiteCheck](https://sitecheck.sucuri.net/) memeriksa indikator malware, status blacklist, dan beberapa masalah keamanan dasar yang terlihat dari luar. Hasil pemindaian publik bukan pengganti audit keamanan menyeluruh.
+
+### Qualys SSL Labs
+
+[SSL Server Test](https://www.ssllabs.com/ssltest/) menganalisis konfigurasi SSL/TLS pada domain. Gunakan hasilnya untuk memeriksa sertifikat dan konfigurasi koneksi HTTPS.
+
+### Mozilla Observatory
+
+[Mozilla Observatory](https://observatory.mozilla.org/) memeriksa sejumlah security header dan memberikan rekomendasi konfigurasi. Terapkan perubahan dengan hati-hati karena header seperti Content Security Policy bisa memengaruhi resource yang boleh dimuat website.
+
+## Mengecek tampilan responsif
+
+### Responsively App
+
+[Responsively App](https://responsively.app/) adalah aplikasi open-source untuk melihat beberapa ukuran layar secara berdampingan. Ini memudahkan pemeriksaan cepat terhadap perubahan layout.
+
+### Screenfly
+
+[Screenfly](https://screenfly.org/) menyediakan pratinjau halaman pada sejumlah resolusi perangkat. Gunakan sebagai pemeriksaan visual awal, bukan jaminan bahwa tampilan akan sama persis pada perangkat fisik.
+
+### Chrome DevTools
+
+Chrome DevTools memiliki Device Toolbar untuk menguji layout pada ukuran viewport berbeda dan menyimulasikan kondisi jaringan tertentu. Buka DevTools, pilih ikon Device Toolbar, lalu pilih ukuran layar yang ingin diperiksa.
+
+## Menguji SEO, aksesibilitas, dan HTML
+
+### Google Lighthouse
+
+[Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) dapat dijalankan dari Chrome DevTools. Auditnya mencakup performa, aksesibilitas, SEO, dan praktik web lainnya.
+
+### W3C Markup Validation Service
+
+[W3C Validator](https://validator.w3.org/) membantu menemukan kesalahan markup HTML. Validasi ini berguna saat ada struktur dokumen yang tidak konsisten atau elemen yang digunakan secara keliru.
+
+### Ahrefs Webmaster Tools
+
+[Ahrefs Webmaster Tools](https://ahrefs.com/awt) menyediakan audit SEO untuk situs yang dapat diverifikasi sebagai milik pengguna. Laporannya dapat membantu menemukan masalah teknis seperti tautan rusak atau metadata yang perlu diperiksa.
+
+## Urutan pengujian yang praktis
+
+1. Jalankan PageSpeed Insights atau Lighthouse untuk mendapat gambaran awal.
+2. Jika halaman terasa lambat, periksa waterfall di GTmetrix atau WebPageTest untuk menemukan request yang paling berpengaruh.
+3. Periksa tampilan mobile dan desktop dengan Chrome DevTools atau Responsively App.
+4. Jalankan W3C Validator dan tinjau temuan aksesibilitas serta SEO.
+5. Periksa HTTPS, security header, dan indikator keamanan dengan tool yang sesuai.
+
+Simpan hasil tes beserta tanggal, perangkat, lokasi, dan kondisi jaringan. Perbandingan akan lebih bermakna jika kondisi pengujiannya serupa. Setelah melakukan perubahan, uji ulang halaman yang sama untuk memastikan masalahnya benar-benar berkurang.
+
+## Kesimpulan
+
+Tidak ada satu tool yang menjawab semua pertanyaan. PageSpeed Insights dan Lighthouse cocok untuk pemeriksaan awal, waterfall membantu melacak pemuatan aset, sementara tool responsivitas dan keamanan memeriksa aspek yang berbeda. Pilih pengujian berdasarkan masalah yang ingin diketahui, lalu verifikasi hasilnya pada website dan perangkat yang benar-benar digunakan pengunjung.
