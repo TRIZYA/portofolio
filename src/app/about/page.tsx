@@ -146,26 +146,41 @@ export default function About() {
                     item.link && (
                       <React.Fragment key={item.name}>
                         <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefetch={item.link.endsWith(".pdf") ? false : undefined}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
+                          {item.link.endsWith(".pdf") ? (
+                            <a className={styles.cvButton} href={item.link} download>
+                              <Icon name={item.icon} size="xs" />
+                              {item.name}
+                            </a>
+                          ) : (
+                            <Button
+                              href={item.link}
+                              prefixIcon={item.icon}
+                              label={item.name}
+                              size="s"
+                              weight="default"
+                              variant="secondary"
+                            />
+                          )}
                         </Row>
                         <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            prefetch={item.link.endsWith(".pdf") ? false : undefined}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
+                          {item.link.endsWith(".pdf") ? (
+                            <a
+                              className={styles.cvIconButton}
+                              href={item.link}
+                              download
+                              aria-label={item.name}
+                              title={item.name}
+                            >
+                              <Icon name={item.icon} />
+                            </a>
+                          ) : (
+                            <IconButton
+                              size="l"
+                              href={item.link}
+                              icon={item.icon}
+                              variant="secondary"
+                            />
+                          )}
                         </Row>
                       </React.Fragment>
                     ),

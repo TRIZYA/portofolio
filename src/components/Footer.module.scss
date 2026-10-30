@@ -5,3 +5,18 @@
         text-align: center;
     }
 }
+
+    .cvIconButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--static-space-24);
+        height: var(--static-space-24);
+        color: var(--neutral-on-background-medium);
+        text-decoration: none;
+        transition: var(--transition-micro-medium);
+    }
+
+    .cvIconButton:hover {
+        color: var(--neutral-on-background-strong);
+    }

@@ -17,3 +17,34 @@
         align-self: center;
     }
 }
+
+.cvButton,
+.cvIconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neutral-on-background-strong);
+    text-decoration: none;
+    background: var(--static-transparent);
+    border: 1px solid var(--neutral-alpha-weak);
+    transition: var(--transition-micro-medium);
+}
+
+.cvButton {
+    gap: var(--static-space-4);
+    height: var(--static-space-32);
+    padding: 0 var(--static-space-8);
+    border-radius: var(--radius-m);
+    font: inherit;
+}
+
+.cvIconButton {
+    width: var(--static-space-40);
+    height: var(--static-space-40);
+    border-radius: var(--radius-l);
+}
+
+.cvButton:hover,
+.cvIconButton:hover {
+    background: var(--neutral-alpha-weak);
+}

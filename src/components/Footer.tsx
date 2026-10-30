@@ -1,4 +1,4 @@
-import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import { Row, Icon, IconButton, SmartLink, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -29,15 +29,27 @@ export const Footer = () => {
           {social.map(
             (item) =>
               item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  prefetch={item.link.endsWith(".pdf") ? false : undefined}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
+                item.link.endsWith(".pdf") ? (
+                  <a
+                    key={item.name}
+                    className={styles.cvIconButton}
+                    href={item.link}
+                    download
+                    aria-label={item.name}
+                    title={item.name}
+                  >
+                    <Icon name={item.icon} size="xs" />
+                  </a>
+                ) : (
+                  <IconButton
+                    key={item.name}
+                    href={item.link}
+                    icon={item.icon}
+                    tooltip={item.name}
+                    size="s"
+                    variant="ghost"
+                  />
+                )
               ),
           )}
         </Row>
