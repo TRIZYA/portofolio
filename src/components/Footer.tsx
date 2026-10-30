@@ -32,6 +32,7 @@ export const Footer = () => {
                 <IconButton
                   key={item.name}
                   href={item.link}
+                  prefetch={item.link.endsWith(".pdf") ? false : undefined}
                   icon={item.icon}
                   tooltip={item.name}
                   size="s"

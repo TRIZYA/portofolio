@@ -149,6 +149,7 @@ export default function About() {
                           <Button
                             key={item.name}
                             href={item.link}
+                            prefetch={item.link.endsWith(".pdf") ? false : undefined}
                             prefixIcon={item.icon}
                             label={item.name}
                             size="s"
@@ -161,6 +162,7 @@ export default function About() {
                             size="l"
                             key={`${item.name}-icon`}
                             href={item.link}
+                            prefetch={item.link.endsWith(".pdf") ? false : undefined}
                             icon={item.icon}
                             variant="secondary"
                           />
