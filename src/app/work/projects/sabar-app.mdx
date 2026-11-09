@@ -1,0 +1,56 @@
+---
+title: "Sabar | Pemantau Harga"
+publishedAt: "2026-11-10"
+summary: "Rancangan aplikasi pemantau harga produk dengan riwayat perubahan dan notifikasi target. MVP masih dalam tahap perancangan."
+images:
+  - "/images/projects/sabar-app/up1.png"
+  - "/images/projects/sabar-app/up2.png"
+  - "/images/projects/sabar-app/up3.png"
+team:
+  - name: "Dimas Achyar Trizyaputra"
+    role: "Software Engineer, Web Developer, Data Analyst"
+    avatar: "/images/avatar.webp"
+    linkedIn: "https://www.linkedin.com/in/dimas-achyar-trizyaputra"
+---
+
+## Overview
+
+Sabar dirancang untuk membantu pengguna memantau harga produk dari toko online. Pengguna dapat menambahkan tautan produk, meninjau data produk yang berhasil diambil, menetapkan harga target, lalu melihat riwayat perubahan harga. Otomasi pengecekan berkala dan notifikasi Telegram direncanakan sebagai bagian dari alur pemantauan.
+
+Status proyek masih tahap perancangan dan MVP belum selesai. Fitur serta arsitektur di bawah ini merangkum rancangan dalam README, bukan klaim bahwa seluruhnya sudah diimplementasikan.
+
+## Key Features
+
+- **Autentikasi**: Rencana login Google atau email/password dengan Firebase Auth, termasuk verifikasi email dan reset kata sandi.
+- **Tambah Produk dari Tautan**: Mengambil nama, gambar, dan harga untuk pratinjau sebelum produk disimpan.
+- **Target dan Riwayat Harga**: Menyimpan target harga dan titik riwayat agar pengguna dapat melihat harga terendah, tertinggi, dan grafik dengan garis target.
+- **Pengelolaan Produk**: Daftar dengan harga saat ini, target, perubahan, status, serta opsi edit target, jeda, dan hapus.
+- **Pengecekan Berkala**: Rencana cron untuk memeriksa harga dan mengirim notifikasi Telegram ketika target tercapai, dengan pencegahan notifikasi berulang.
+- **Kontrol dan Pemulihan**: Cek manual per produk, status error yang jelas, tombol coba lagi, dan input harga manual jika toko memblokir pengambilan otomatis.
+- **Pencarian dan Ekspor**: Rencana pencarian, filter, pengurutan produk yang mencapai target ke bagian atas, dan ekspor riwayat ke CSV.
+- **Bantuan AI Opsional**: puter.js direncanakan untuk merangkum tren harga atau membantu ekstraksi saat parser biasa gagal; hasilnya berupa saran dan fitur inti tetap dirancang berjalan tanpa AI.
+
+## Technologies Used
+
+- **React dan Vite**: Rencana frontend aplikasi berbasis JSX.
+- **Node.js dan Express**: Rencana backend API untuk pengambilan harga dan akses data.
+- **Firebase Realtime Database**: Rencana penyimpanan data produk dan riwayat harga dalam struktur JSON.
+- **Firebase Admin SDK**: Akses database dari backend; klien direncanakan tidak membaca atau menulis database secara langsung.
+- **Firebase Authentication**: Rencana autentikasi pengguna dan verifikasi ID token oleh backend.
+- **Penjadwal dan Telegram**: Rencana pengecekan berkala serta notifikasi saat harga mencapai target.
+- **puter.js**: Integrasi AI opsional yang dipicu pengguna.
+- **Vercel**: Platform deployment yang direncanakan.
+
+## Challenges and Learnings
+
+Harga perlu diambil di backend karena browser tidak dapat meminta halaman toko lain secara langsung akibat batasan CORS, sementara beberapa toko juga dapat memblokir bot. Rancangan menyediakan input manual sebagai fallback dan memprioritaskan data terstruktur seperti JSON-LD atau API resmi daripada parsing HTML mentah.
+
+Keamanan data juga menjadi pertimbangan utama: akses baca/tulis Realtime Database direncanakan hanya melalui backend dengan Firebase Admin SDK, sementara API memverifikasi ID token dan membatasi data berdasarkan akun. Riwayat harga dipisahkan dari data produk supaya daftar produk tetap ringan.
+
+## Outcome
+
+Targetnya adalah satu aplikasi untuk mengikuti harga produk, melihat tren dan riwayat, serta menerima pemberitahuan ketika harga mencapai target. Saat ini MVP belum selesai; roadmap masih mencakup koneksi Firebase, pengambilan harga, antarmuka produk, penyimpanan riwayat, grafik, cron, notifikasi, dan deployment.
+
+## Demo
+
+[Sabar | Pemantau Harga](https://sabar-app-brown.vercel.app/)

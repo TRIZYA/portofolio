@@ -1,0 +1,55 @@
+---
+title: "Jernih — Image Restorer & Upscaler"
+publishedAt: "2026-11-10"
+summary: "Rancangan aplikasi restorasi dan upscaling gambar di browser dengan pemrosesan lokal, model AI, dan fallback klasik. MVP masih dalam tahap pengembangan."
+images:
+  - "/images/projects/jernih-app/up1.png"
+  - "/images/projects/jernih-app/up2.png"
+  - "/images/projects/jernih-app/up3.png"
+team:
+  - name: "Dimas Achyar Trizyaputra"
+    role: "Software Engineer, Web Developer, Data Analyst"
+    avatar: "/images/avatar.webp"
+    linkedIn: "https://www.linkedin.com/in/dimas-achyar-trizyaputra"
+---
+
+## Overview
+
+Jernih dirancang untuk memperjelas gambar yang blur, beresolusi kecil, atau memiliki artefak kompresi JPEG, termasuk foto, ilustrasi, dan dokumen bertulisan. Pemrosesan inti direncanakan berjalan di browser pengguna, tanpa mengunggah gambar ke server. Dengan arsitektur statis dan tanpa backend untuk MVP, aplikasi juga ditargetkan dapat di-hosting secara gratis.
+
+Status proyek masih dalam pengembangan: persiapan Fase 1 selesai, sementara validasi spike Fase 0 untuk WebGPU, perangkat mobile, dan pemrosesan tile masih berlangsung.
+
+## Key Features
+
+- **Input Gambar**: Rencana mendukung pilih file, drag-and-drop, dan tempel gambar dari clipboard.
+- **Preset dan Skala**: Preset Foto, Dokumen/Teks, dan Ilustrasi/Anime dengan pilihan upscale 2x atau 4x.
+- **Mesin Restorasi**: Real-ESRGAN melalui ONNX Runtime Web dengan WebGPU dan fallback WASM, serta mode cepat berbasis UpscalerJS dan TensorFlow.js.
+- **Pemrosesan Gambar Besar**: Pemrosesan per tile dengan padding, progres, estimasi waktu, dan opsi membatalkan.
+- **Perbandingan dan Ekspor**: Rencana slider sebelum/sesudah dengan zoom dan geser, serta unduhan PNG, JPG, atau WebP.
+- **Peningkatan Opsional**: Pra-pemrosesan noise/artefak dan pasca-pemrosesan sharpen serta kontras.
+- **Fallback Klasik**: Lanczos melalui pica dan unsharp mask jika pemrosesan AI tidak digunakan.
+- **Privasi**: Gambar diproses lokal; fitur saran AI opsional melalui puter.js memerlukan persetujuan karena gambar dikirim ke layanan pihak ketiga.
+
+## Technologies Used
+
+- **React dan Vite**: Rencana fondasi antarmuka web berbasis JSX.
+- **ONNX Runtime Web dan Real-ESRGAN**: Mesin utama yang direncanakan untuk restorasi dan super-resolution, menggunakan WebGPU atau fallback WASM.
+- **UpscalerJS dan TensorFlow.js**: Rencana mesin upscale cepat dengan model ESRGAN ringan.
+- **Web Worker dan Canvas/OffscreenCanvas**: Rencana untuk menjalankan pemrosesan tile di luar alur utama antarmuka.
+- **pica**: Fallback Lanczos tanpa AI.
+- **puter.js**: Integrasi opsional untuk saran preset dan skala; memerlukan persetujuan pengguna.
+- **Cloudflare Pages, Vercel Hobby, atau GitHub Pages**: Pilihan hosting statis yang direncanakan.
+
+## Challenges and Learnings
+
+Tantangan utama proyek ini adalah menemukan keseimbangan antara kualitas restorasi, kecepatan pemrosesan di browser, dan penggunaan memori, terutama untuk gambar besar. Pemrosesan tile dengan padding, progres, dan opsi batal direncanakan untuk membantu mengatasi keterbatasan tersebut; kompatibilitas WebGPU pada browser dan perangkat mobile masih perlu divalidasi.
+
+AI menghasilkan tebakan detail yang masuk akal, bukan pemulihan detail asli. Karena itu teks kecil, nomor, tanda tangan, dan wajah perlu diperiksa ulang. Fitur pendukung berbasis layanan pihak ketiga juga harus dibedakan dari pemrosesan lokal dan meminta persetujuan pengguna.
+
+## Outcome
+
+Target proyek adalah aplikasi restorasi dan upscaling gambar berbasis browser tanpa backend untuk fitur inti. Saat ini MVP belum selesai: mesin ONNX bertile, antarmuka perbandingan dan unduh, preset, fallback klasik, serta deployment masih berada dalam roadmap.
+
+## Demo
+
+[Jernih — Image Restorer & Upscaler](https://jernih-app.vercel.app/)
