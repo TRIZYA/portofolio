@@ -317,6 +317,8 @@ const toDriveImage = (fileId: string) => `https://drive.google.com/thumbnail?id=
 const toDrivePreview = (fileId: string) => `https://drive.google.com/file/d/${fileId}/preview`;
 
 const trainingCertificates: Achievement["training"] = [
+  { src: toDriveImage("1huKI2igz2jFvLeCWTjBZzn36ISABjMJ4"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Kelulusan Kelas Dicoding Belajar Dasar Cloud dan Gen AI di AWS" },
+  { src: toDriveImage("1EthLsXA8Q9rDMBXqnGZV2qToA0V-hCdW"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Kelulusan Kelas Dicoding Spec-Driven Development dengan Kiro" },
   { src: toDriveImage("1ErEn1A87zABb6knsY_YeytEuGQ07Bpd3"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ancaman Pembobolan Akun Pribadi dan Pencegahannya" },
   { src: toDriveImage("1D8CmdHaMSIVzKZw-Vn-BVOPrlxJBra8B"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Dasar-dasar Keamanan AI" },
   { src: toDriveImage("13k5qkrio5Z7qLDFGhIrRgfyus8QN_Vha"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Micro Skill Komdigi Ethical Hacker For Dummies" },
