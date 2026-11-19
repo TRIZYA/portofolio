@@ -243,7 +243,6 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
     </Column>
   );
 }

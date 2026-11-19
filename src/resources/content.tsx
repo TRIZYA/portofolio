@@ -175,10 +175,12 @@ const about: About = {
       {
         name: "Universitas Muhammadiyah Gresik",
         description: <>Mahasiswa Teknik Informatika yang sedang menempuh pendidikan dan mengembangkan kemampuan di bidang teknologi informasi.</>,
+        diploma: "/images/ijasah/IJASAH-UMG.png",
       },
       {
         name: "SMKN 1 Lamongan",
         description: <>Lulus dengan jurusan Multimedia, mempelajari desain, editing, dan dasar-dasar teknologi komputer.</>,
+        diploma: "/images/ijasah/IJASAH-SMK.png",
       },
     ],
   },

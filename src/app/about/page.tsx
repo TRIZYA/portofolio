@@ -140,55 +140,35 @@ export default function About() {
                 data-border="rounded"
               >
                 {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          {item.link.endsWith(".pdf") ? (
-                            <a
-                              className={`${styles.cvButton} radius-m button cursor-interactive`}
-                              href={item.link}
-                              download
-                            >
-                              <Icon name={item.icon} size="xs" />
-                              {item.name}
-                            </a>
-                          ) : (
+                  .filter((item) => item.essential)
+                  .map(
+                    (item) =>
+                      item.link && (
+                        <React.Fragment key={item.name}>
+                          <Row s={{ hide: true }}>
                             <Button
                               href={item.link}
+                              download={item.link.endsWith(".pdf")}
                               prefixIcon={item.icon}
                               label={item.name}
                               size="s"
                               weight="default"
                               variant="secondary"
                             />
-                          )}
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          {item.link.endsWith(".pdf") ? (
-                            <a
-                              className={`${styles.cvIconButton} radius-l button cursor-interactive`}
-                              href={item.link}
-                              download
-                              aria-label={item.name}
-                              title={item.name}
-                            >
-                              <Icon name={item.icon} />
-                            </a>
-                          ) : (
+                          </Row>
+                          <Row hide s={{ hide: false }}>
                             <IconButton
                               size="l"
                               href={item.link}
+                              download={item.link.endsWith(".pdf")}
                               icon={item.icon}
+                              tooltip={item.name}
                               variant="secondary"
                             />
-                          )}
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
+                          </Row>
+                        </React.Fragment>
+                      ),
+                  )}
               </Row>
             )}
           </Column>
@@ -245,9 +225,21 @@ export default function About() {
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
+                    <Row gap="12" vertical="center" s={{ direction: "column", align: "start" }}>
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      {institution.diploma && (
+                        <Button
+                          type="button"
+                          disabled
+                          label="Lihat ijazah"
+                          size="s"
+                          weight="default"
+                          variant="tertiary"
+                        />
+                      )}
+                    </Row>
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
