@@ -1,0 +1,90 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--neutral-alpha-weak);
+  border-radius: var(--radius-l);
+  background: var(--neutral-alpha-weak);
+  touch-action: pan-y;
+}
+
+.image {
+  object-fit: cover;
+  transition: opacity 160ms ease;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: var(--neutral-on-background-weak);
+  background: var(--neutral-alpha-weak);
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--neutral-on-background-strong);
+  background: var(--surface-background);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 160ms ease;
+
+  &:focus-visible,
+  .carousel:hover &,
+  .carousel:focus-within & {
+    opacity: 1;
+  }
+}
+
+.previous {
+  left: 0.75rem;
+}
+
+.next {
+  right: 0.75rem;
+}
+
+.indicators {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+  padding: 0 12px;
+}
+
+.indicator {
+  flex: 1;
+  height: 2px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--neutral-alpha-medium);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-solid-strong);
+    outline-offset: 3px;
+  }
+}
+
+.active {
+  background: var(--neutral-on-background-strong);
+}
+
+@media (hover: none) {
+  .control {
+    opacity: 1;
+  }
+}
