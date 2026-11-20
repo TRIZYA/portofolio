@@ -74,11 +74,21 @@
 }
 
 @media (max-width: 768px) {
+  .homePage {
+    gap: 16px !important;
+  }
+
   .heroRow {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 12px !important;
     grid-template-columns: none;
+  }
+
+  .mobileHeroMedia,
+  .heroCopy {
+    flex: 0 0 auto !important;
   }
 
   .desktopFeaturedBadge {

@@ -123,6 +123,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
 function createParagraph({ children }: TextProps) {
   return (
     <Text
+      as="p"
       style={{ lineHeight: "175%" }}
       variant="body-default-m"
       onBackground="neutral-medium"
