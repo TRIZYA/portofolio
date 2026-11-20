@@ -340,7 +340,7 @@ const sertifikatAchievementCertificates: Achievement["achievements"] = [
   { src: toDriveImage("1ntCkgWAC_LAD6QRFHaHlMkxHJaEfWBan"), alt: "image", orientation: "vertical", external: true, caption: "Sertifikat Sebagai Peserta Uberalez 2022" },
   { src: toDriveImage("1QLoJtVy4-OLjm2W2_JkdjzM4it4tTxqR"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Pesantren Kilat Baitul Arqom" },
   { src: toDriveImage("10nWf-Y5UCaxnuqBwLqDAApsReGnijYQj"), alt: "image", orientation: "horizontal", external: true, caption: "Sertifikat Sebagai Peserta Mataf UMG 2022" },
-  { src: toDriveImage("1qE8L8LHu7RqyzoxhSbl8cdmVGC17onHv"), alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
+  { src: toDriveImage("1HtOzjntD36aD5VAp8OOamGh45SFS8kSJ"), alt: "image", orientation: "horizontal", external: true, caption: "Piagam Penghargaan Juara 2 Pelajar Putra Lomba Gerak Jalan Napak Tilas Kadet Soewoko 2019" },
 ];
 
 const suratKeputusanAchievementCertificates: Achievement["achievements"] = [
