@@ -231,8 +231,9 @@ export default function About() {
                       </Text>
                       {institution.diploma && (
                         <Button
-                          type="button"
-                          disabled
+                          href={institution.diploma}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           label="Lihat ijazah"
                           size="s"
                           weight="default"
