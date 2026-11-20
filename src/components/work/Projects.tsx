@@ -5,9 +5,10 @@ import { ProjectCard } from "@/components";
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
+  className?: string;
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
+export function Projects({ range, exclude, className }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
@@ -24,7 +25,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
+    <Column className={className} fillWidth gap="xl" marginBottom="40" paddingX="l">
       {displayedProjects.map((post, index) => (
         <ProjectCard
           priority={index < 2}

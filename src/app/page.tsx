@@ -220,25 +220,25 @@ export default function Home() {
         </Column>
 
       </Row>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+      <RevealFx className={styles.projectSection} translateY="16" delay={0.6}>
+        <Projects className={styles.homeProjects} range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
+        <Column className={styles.blogSection} fillWidth gap="24" marginBottom="l">
+          <Row className={styles.blogDivider} fillWidth paddingRight="64">
             <Line maxWidth={48} />
           </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
+          <Row className={styles.blogContent} fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
+            <Row className={styles.blogTitle} flex={1} paddingLeft="l" paddingTop="24">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
                 Latest from the blog
               </Heading>
             </Row>
-            <Row flex={3} paddingX="20">
+            <Row className={styles.blogPosts} flex={3} paddingX="20">
               <Posts range={[1, 2]} columns="2" />
             </Row>
           </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
+          <Row className={styles.blogDivider} fillWidth paddingLeft="64" horizontal="end">
             <Line maxWidth={48} />
           </Row>
         </Column>

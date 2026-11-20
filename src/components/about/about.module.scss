@@ -8,6 +8,10 @@
     }
 }
 
+.paragraphText {
+    text-align: justify;
+}
+
 @media (max-width: breakpoints.$s) {
     .textAlign {
         text-align: center;

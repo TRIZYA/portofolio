@@ -174,7 +174,7 @@ export default function About() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+            <Column className={styles.paragraphText} textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
             </Column>
           )}
@@ -204,6 +204,7 @@ export default function About() {
                           <Text
                             as="li"
                             variant="body-default-m"
+                            className={styles.paragraphText}
                             key={`${experience.company}-${index}`}
                           >
                             {achievement}
@@ -241,7 +242,12 @@ export default function About() {
                         />
                       )}
                     </Row>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                    <Text
+                      as="p"
+                      variant="heading-default-xs"
+                      onBackground="neutral-weak"
+                      className={styles.paragraphText}
+                    >
                       {institution.description}
                     </Text>
                   </Column>
@@ -266,7 +272,12 @@ export default function About() {
                     <Text id={skill.title} variant="heading-strong-l">
                       {skill.title}
                     </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Text
+                      as="p"
+                      variant="body-default-m"
+                      onBackground="neutral-weak"
+                      className={styles.paragraphText}
+                    >
                       {skill.description}
                     </Text>
                     {skill.tags && skill.tags.length > 0 && (
