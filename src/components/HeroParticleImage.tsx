@@ -271,6 +271,8 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
 
   const rafIdRef = useRef<number | null>(null);
   const lastTimeRef = useRef<number>(0);
+  /** Progress posisi hero di viewport (0..1), diperbarui saat halaman di-scroll. */
+  const scrollProgressRef = useRef<number>(0);
 
   const isVisibleRef = useRef<boolean>(true);
   const isTabActiveRef = useRef<boolean>(true);
@@ -289,8 +291,12 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
       const cfg = HERO_GLASS_CONFIG;
       const hover = revealActiveRef.current;
 
-      const idleX = width * (0.5 + Math.sin(time * cfg.IDLE_DRIFT_SPEED) * 0.16);
-      const idleY = height * (0.68 + Math.cos(time * cfg.IDLE_DRIFT_SPEED * 0.83) * 0.10);
+      // Scroll progress memberi parallax kecil pada titik idle blob.
+      // Nilainya dibatasi agar bentuk tetap berada di area gambar.
+      const scrollProgress = scrollProgressRef.current;
+      const scrollWave = Math.sin(scrollProgress * Math.PI);
+      const idleX = width * (0.5 + Math.sin(time * cfg.IDLE_DRIFT_SPEED) * 0.16 + scrollWave * 0.025);
+      const idleY = height * (0.68 + Math.cos(time * cfg.IDLE_DRIFT_SPEED * 0.83) * 0.10 + (scrollProgress - 0.5) * 0.06);
       const target = hover ? pointerTargetRef.current : { x: idleX, y: idleY };
       const current = pointerCurrentRef.current;
 
@@ -552,7 +558,9 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
 
           shard.life += dtScale;
           shard.x += shard.vx * dtScale;
-          shard.y += shard.vy * dtScale;
+          // Gerakan scroll menambah dorongan vertikal yang sangat halus pada shard.
+          const scrollDrift = (scrollProgressRef.current - 0.5) * 0.08;
+          shard.y += (shard.vy + scrollDrift) * dtScale;
           shard.angle += shard.spin * dtScale;
 
           if (shard.life >= shard.maxLife) {
@@ -603,14 +611,18 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
     if (width <= 0 || height <= 0) return;
 
     const dpr = Math.min(window.devicePixelRatio || 1, HERO_GLASS_CONFIG.maxDevicePixelRatio);
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
+    const pixelWidth = Math.round(width * dpr);
+    const pixelHeight = Math.round(height * dpr);
+
+    // Mengubah width/height canvas akan menghapus seluruh state context.
+    // Lakukan hanya jika ukuran backing store memang berubah.
+    if (canvas.width !== pixelWidth) canvas.width = pixelWidth;
+    if (canvas.height !== pixelHeight) canvas.height = pixelHeight;
+
     sizeRef.current = { width, height };
 
     const ctx = canvas.getContext("2d");
-    if (ctx) {
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
+    if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }, []);
 
   /**
@@ -667,6 +679,12 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType !== "touch") return;
     if (!acReadyRef.current) return;
+    // Menjamin pointerup/cancel diterima walau jari sedikit keluar elemen.
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      // Beberapa kondisi browser dapat menolak pointer capture; interaksi tetap lanjut.
+    }
     if (touchTimeoutRef.current !== null) {
       window.clearTimeout(touchTimeoutRef.current);
       touchTimeoutRef.current = null;
@@ -821,6 +839,20 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
     isTabActiveRef.current = !document.hidden;
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    // Scroll-driven parallax: progress dihitung relatif terhadap viewport.
+    // Listener passive menjaga scroll Android Chrome tetap responsif.
+    const updateScrollProgress = () => {
+      const currentContainer = containerRef.current;
+      if (!currentContainer) return;
+      const rect = currentContainer.getBoundingClientRect();
+      const viewportHeight = Math.max(window.innerHeight, 1);
+      const travel = viewportHeight + rect.height;
+      const progress = (viewportHeight - rect.top) / Math.max(travel, 1);
+      scrollProgressRef.current = Math.min(1, Math.max(0, progress));
+    };
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+
     // Hentikan animasi saat hero tidak terlihat di viewport.
     const container = containerRef.current;
     let intersectionObserver: IntersectionObserver | null = null;
@@ -830,12 +862,15 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
           const entry = entries[0];
           isVisibleRef.current = Boolean(entry?.isIntersecting);
           if (isVisibleRef.current) {
+            lastTimeRef.current = 0;
             syncSetup();
           } else {
+            // Reset timestamp agar tidak ada lonjakan delta saat hero masuk lagi.
+            lastTimeRef.current = 0;
             stopLoop();
           }
         },
-        { threshold: 0.01 },
+        { threshold: 0, rootMargin: "120px 0px 120px 0px" },
       );
       intersectionObserver.observe(container);
     }
@@ -870,6 +905,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
       if (touchTimeoutRef.current !== null) window.clearTimeout(touchTimeoutRef.current);
       mediaQuery.removeEventListener("change", handleMotionChange);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("scroll", updateScrollProgress);
       window.removeEventListener("resize", scheduleResize);
       intersectionObserver?.disconnect();
       resizeObserver?.disconnect();
@@ -901,7 +937,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
         style={{
           position: "absolute",
           inset: 0,
-          zIndex: 1,
+          zIndex: 2,
           width: "100%",
           height: "100%",
           top: HERO_LAYER_TOP_OFFSET,
@@ -918,7 +954,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
       {/* Layer 2: hero-ac.png, dipotong berbentuk blob. Posisi & mask sama dengan layer 1. */}
       <img
         ref={acImgRef}
-        src={`${acSrc}?v=${HERO_GLASS_CONFIG.acImageVersion}`}
+        src={`${acSrc}${acSrc.includes("?") ? "&" : "?"}v=${HERO_GLASS_CONFIG.acImageVersion}`}
         alt=""
         aria-hidden="true"
         crossOrigin="anonymous"
@@ -928,7 +964,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
         style={{
           position: "absolute",
           inset: 0,
-          zIndex: 2,
+          zIndex: 3,
           width: "100%",
           height: "100%",
           objectFit: "cover",
@@ -950,7 +986,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
         style={{
           position: "absolute",
           inset: 0,
-          zIndex: -3,
+          zIndex: 1,
           width: "100%",
           height: "100%",
           pointerEvents: "none",
