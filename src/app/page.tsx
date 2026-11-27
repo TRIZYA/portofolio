@@ -14,6 +14,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { HeroParticleImage } from "@/components";
 import styles from "./page.module.scss";
 
 export async function generateMetadata() {
@@ -55,12 +56,7 @@ export default function Home() {
           boxSizing: "border-box",
         }}
       >
-        <Column
-          flex={1}
-          horizontal="center"
-          align="center"
-          className={styles.mobileHeroMedia}
-        >
+        <Column flex={1} horizontal="center" align="center" className={styles.mobileHeroMedia}>
           {home.featured.display && (
             <RevealFx
               fillWidth
@@ -113,18 +109,10 @@ export default function Home() {
                   marginRight: "18px",
                 }}
               >
-                <img
+                <HeroParticleImage
                   src="/images/home.png"
+                  acSrc="/images/hero-ac.png"
                   alt={person.name}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center left",
-                    display: "block",
-                    WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
-                    maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
-                  }}
                 />
                 <div
                   style={{
@@ -154,7 +142,13 @@ export default function Home() {
           }}
         >
           {home.featured.display && (
-            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" className={styles.desktopFeaturedBadge}>
+            <RevealFx
+              fillWidth
+              horizontal="start"
+              paddingTop="16"
+              paddingBottom="32"
+              className={styles.desktopFeaturedBadge}
+            >
               <Badge
                 className={styles.heroBadge}
                 background="brand-alpha-weak"
@@ -170,11 +164,7 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
-            <Heading
-              wrap="balance"
-              variant="display-strong-l"
-              className={styles.heroHeading}
-            >
+            <Heading wrap="balance" variant="display-strong-l" className={styles.heroHeading}>
               {home.headline}
             </Heading>
           </RevealFx>
@@ -218,7 +208,6 @@ export default function Home() {
             </Button>
           </RevealFx>
         </Column>
-
       </Row>
       <RevealFx className={styles.projectSection} translateY="16" delay={0.6}>
         <Projects className={styles.homeProjects} range={[1, 1]} />
@@ -228,7 +217,13 @@ export default function Home() {
           <Row className={styles.blogDivider} fillWidth paddingRight="64">
             <Line maxWidth={48} />
           </Row>
-          <Row className={styles.blogContent} fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
+          <Row
+            className={styles.blogContent}
+            fillWidth
+            gap="24"
+            marginTop="40"
+            s={{ direction: "column" }}
+          >
             <Row className={styles.blogTitle} flex={1} paddingLeft="l" paddingTop="24">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
                 Latest from the blog
