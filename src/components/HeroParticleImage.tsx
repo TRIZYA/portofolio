@@ -792,6 +792,7 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     reducedMotionRef.current = mediaQuery.matches;
+    // Mobile tetap menjalankan animasi; hanya preferensi reduced-motion yang menghentikannya.
 
     const handleMotionChange = (event: MediaQueryListEvent) => {
       reducedMotionRef.current = event.matches;
@@ -917,10 +918,12 @@ export const HeroParticleImage: React.FC<HeroParticleImageProps> = ({
       {/* Layer 2: hero-ac.png, dipotong berbentuk blob. Posisi & mask sama dengan layer 1. */}
       <img
         ref={acImgRef}
-        src={acSrc}
+        src={`${acSrc}?v=${HERO_GLASS_CONFIG.acImageVersion}`}
         alt=""
         aria-hidden="true"
         crossOrigin="anonymous"
+        loading="eager"
+        fetchPriority="high"
         draggable={false}
         style={{
           position: "absolute",
